@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity";
+
+import "common/vector2.proto";
+import "common/vector3.proto";
+import "common/quaternion.proto";
+import "unity/identifiers.proto";
+
+message RectTransformCreate {
+    TransformGameObjectIdentifier id = 1;
+}
+
+message RectTransformDestroy {
+    TransformGameObjectIdentifier id = 1;
+}
+
+message RectTransformUpdateSiblingIndex {
+    TransformGameObjectIdentifier id = 1;
+    int32 sibling_index = 2;
+}
+
+message RectTransformUpdateParent {
+    TransformGameObjectIdentifier id = 1;
+    optional TransformGameObjectIdentifier parent_id = 2;
+}
+
+message RectTransformUpdatePosition {
+    TransformGameObjectIdentifier id = 1;
+    common.Vector3 local_position = 2;
+    common.Vector3 world_position = 3;
+}
+
+message RectTransformUpdateRotation {
+    TransformGameObjectIdentifier id = 1;
+    common.Quaternion local_rotation = 2;
+    common.Quaternion world_rotation = 3;
+}
+
+message RectTransformUpdateScale {
+    TransformGameObjectIdentifier id = 1;
+    common.Vector3 local_scale = 2;
+    common.Vector3 world_scale = 3;
+}
+
+message RectTransformUpdateAnchors {
+    TransformGameObjectIdentifier id = 1;
+    common.Vector2 anchor_min = 2;
+    common.Vector2 anchor_max = 3;
+}
+
+message RectTransformUpdateSize {
+    TransformGameObjectIdentifier id = 1;
+    common.Vector2 size_delta = 2;
+}
+
+message RectTransformUpdatePivot {
+    TransformGameObjectIdentifier id = 1;
+    common.Vector2 pivot = 2;
+}

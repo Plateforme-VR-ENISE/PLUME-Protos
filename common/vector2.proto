@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package plume.sample.common;
+option csharp_namespace = "PLUME.Sample.Common";
+
+message Vector2 {
+    float x = 1;
+    float y = 2;
+}

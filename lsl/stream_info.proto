@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package plume.sample.lsl;
+option csharp_namespace = "PLUME.Sample.LSL";
+
+message StreamInfo {
+    // PLUME timestamp when the sample was received by the stream inlet. This is required
+    // in case one need the original reception timestamp of the sample, as the sample timestamp
+    // is modified to take the LSL time offset into account.
+    uint64 plume_raw_timestamp = 1;
+
+    // Timestamp given by the LSL dll in seconds
+    double lsl_timestamp = 2;
+    double lsl_clock_offset = 3;
+    string lsl_stream_id = 4;
+}

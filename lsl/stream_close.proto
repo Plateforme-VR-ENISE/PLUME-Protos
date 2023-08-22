@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package plume.sample.lsl;
+option csharp_namespace = "PLUME.Sample.LSL";
+
+import "lsl/stream_info.proto";
+
+message StreamClose {
+    StreamInfo stream_info = 1;
+}

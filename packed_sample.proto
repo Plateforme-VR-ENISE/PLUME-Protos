@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package plume.sample;
+option csharp_namespace = "PLUME.Sample";
+
+import "sample_header.proto";
+import "google/protobuf/any.proto";
+
+message PackedSample {
+    SampleHeader header = 1;
+    google.protobuf.Any payload = 2;
+}

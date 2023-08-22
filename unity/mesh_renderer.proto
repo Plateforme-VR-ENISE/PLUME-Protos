@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity";
+
+import "unity/identifiers.proto";
+
+message MeshRendererCreate {
+    ComponentIdentifier id = 1;
+}
+
+message MeshRendererDestroy {
+    ComponentIdentifier id = 1;
+}
+
+message MeshRendererUpdateEnabled {
+    ComponentIdentifier id = 1;
+    bool enabled = 2;
+}
+
+message MeshRendererUpdateMaterials {
+    ComponentIdentifier id = 1;
+    repeated AssetIdentifier materials_ids = 2;
+}

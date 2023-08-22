@@ -1,0 +1,143 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity";
+
+import "unity/identifiers.proto";
+import "common/matrix4x4.proto";
+import "common/vector4.proto";
+import "common/color.proto";
+
+message LightCreate {
+    ComponentIdentifier id = 1;
+}
+
+message LightDestroy {
+    ComponentIdentifier id = 1;
+}
+
+message LightUpdateEnabled {
+    ComponentIdentifier id = 1;
+    bool enabled = 2;
+}
+
+message LightUpdateType {
+    ComponentIdentifier id = 1;
+    LightType type = 2;
+}
+
+message LightUpdateShape {
+    ComponentIdentifier id = 1;
+    LightShape shape = 2;
+}
+
+message LightUpdateIntensity {
+    ComponentIdentifier id = 1;
+    float intensity = 2;
+}
+
+message LightUpdateBounceIntensity {
+    ComponentIdentifier id = 1;
+    float bounce_intensity = 2;
+}
+
+message LightUpdateRange {
+    ComponentIdentifier id = 1;
+    float range = 2;
+}
+
+message LightUpdateColor {
+    ComponentIdentifier id = 1;
+    common.Color color = 2;
+    float color_temperature = 3;
+    bool use_color_temperature = 4;
+}
+
+message LightUpdateSpotAngle {
+    ComponentIdentifier id = 1;
+    float spot_angle = 2;
+    float inner_spot_angle = 3;
+}
+
+message LightUpdateShadows {
+    ComponentIdentifier id = 1;
+    LightShadows shadows = 2;
+
+    float shadow_strength = 3;
+    
+    LightShadowResolution shadow_resolution = 4;
+
+    common.Matrix4x4 shadow_matrix_override = 5;
+    bool use_shadow_matrix_override = 6;
+    float shadow_bias = 7;
+    float shadow_normal_bias = 8;
+    float shadow_near_plane = 9;
+    bool use_view_frustum_for_shadow_caster_cull = 10;
+
+    // Only for directional lights
+    repeated float layer_shadow_cull_distances = 11;
+
+    // Only for Built-in RP
+    optional int32 shadow_custom_resolution = 12;
+
+    // Not supported on legacy renderers
+    optional LightShadowCasterMode light_shadow_caster_mode = 13;
+}
+
+message LightUpdateRenderingLayerMask {
+    ComponentIdentifier id = 1;
+    int32 rendering_layer_mask = 2;
+}
+
+message LightUpdateCulling {
+    ComponentIdentifier id = 1;
+    int32 culling_mask = 2;
+    common.Vector4 bounding_sphere_override = 3;
+    bool use_bounding_sphere_override = 4;
+}
+
+message LightUpdateCookie {
+    ComponentIdentifier id = 1;
+    optional AssetIdentifier cookie_id = 2;
+    optional float cookie_size = 3;
+}
+
+message LightUpdateFlare {
+    ComponentIdentifier id = 1;
+    optional AssetIdentifier flare_id = 2;
+}
+
+enum LightType {
+    LIGHT_TYPE_SPOT = 0;
+    LIGHT_TYPE_DIRECTIONAL = 1;
+    LIGHT_TYPE_POINT = 2;
+    LIGHT_TYPE_AREA = 3;
+    LIGHT_TYPE_RECTANGLE = 4;
+    LIGHT_TYPE_DISC = 5;
+}
+
+enum LightShape {
+    LIGHT_SHAPE_CONE = 0;
+    LIGHT_SHAPE_PYRAMID = 1;
+    LIGHT_SHAPE_BOX = 2;
+}
+
+enum LightShadowCasterMode {
+    LIGHT_SHADOW_CASTER_MODE_DEFAULT = 0;
+    LIGHT_SHADOW_CASTER_MODE_NON_LIGHTMAPPED_ONLY = 1;
+    LIGHT_SHADOW_CASTER_MODE_EVERYTHING = 2;
+}
+
+enum LightShadowResolution {
+    LIGHT_SHADOW_RESOLUTION_FROM_QUALITY_SETTINGS = 0;
+    LIGHT_SHADOW_RESOLUTION_LOW = 1;
+    LIGHT_SHADOW_RESOLUTION_MEDIUM = 2;
+    LIGHT_SHADOW_RESOLUTION_HIGH = 3;
+    LIGHT_SHADOW_RESOLUTION_VERY_HIGH = 4;
+}
+
+enum LightShadows {
+    LIGHT_SHADOWS_NONE = 0;
+    LIGHT_SHADOWS_HARD = 1;
+    LIGHT_SHADOWS_SOFT = 2;
+}

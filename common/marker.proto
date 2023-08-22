@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package plume.sample.common;
+option csharp_namespace = "PLUME.Sample.Common";
+
+message Marker {
+    string label = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package plume.sample;
+option csharp_namespace = "PLUME.Sample";
+
+message SampleHeader {
+    // Elapsed time in nanoseconds relative to the beginning of the record
+    uint64 time = 1;
+    // Sequence ID: consecutively increasing ID
+    uint32 seq = 2;
+}

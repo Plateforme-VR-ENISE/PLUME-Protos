@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity.UI";
+
+import "unity/identifiers.proto";
+import "common/vector4.proto";
+
+message ImageCreate {
+    ComponentIdentifier id = 1;
+}
+
+message ImageDestroy {
+    ComponentIdentifier id = 1;
+}
+
+message ImageUpdateColor {
+    ComponentIdentifier id = 1;
+    common.Vector4 color = 2;
+}
+
+message ImageUpdateSprite {
+    ComponentIdentifier id = 1;
+    optional AssetIdentifier sprite_id = 2;
+}

@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package plume.sample.lsl;
+option csharp_namespace = "PLUME.Sample.LSL";
+
+import "lsl/stream_info.proto";
+
+message StreamSample {
+    
+    StreamInfo stream_info = 1;
+
+    oneof values {
+        RepeatedFloat float_value = 5;
+        RepeatedDouble double_value = 6;
+        RepeatedString string_value = 7;
+        RepeatedInt32 int8_value = 8;
+        RepeatedInt32 int16_value = 9;
+        RepeatedInt32 int32_value = 10;
+        RepeatedInt64 int64_value = 11;
+    }
+}
+
+message RepeatedFloat {
+    repeated float value = 1;
+}
+
+message RepeatedDouble {
+    repeated double value = 1;
+}
+
+message RepeatedString {
+    repeated string value = 1;
+}
+
+message RepeatedInt32 {
+    repeated int32 value = 1;
+}
+
+message RepeatedInt64 {
+    repeated int64 value = 1;
+}

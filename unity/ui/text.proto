@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity.UI";
+
+import "unity/identifiers.proto";
+import "common/color.proto";
+
+message TextCreate {
+    ComponentIdentifier id = 1;
+}
+
+message TextDestroy {
+    ComponentIdentifier id = 1;
+}
+
+message TextUpdateValue {
+    ComponentIdentifier id = 1;
+    string text = 2;
+}
+
+message TextUpdateFont {
+    ComponentIdentifier id = 1;
+    optional AssetIdentifier font_id = 2;
+    int32 font_style = 3;
+    int32 font_size = 4;
+}
+
+message TextUpdateColor {
+    ComponentIdentifier id = 1;
+    common.Color color = 2;
+}
+
+message TextUpdateExtras {
+    ComponentIdentifier id = 1;
+    float line_spacing = 2;
+    bool support_rich_text = 3;
+    int32 alignment = 4;
+    bool align_by_geometry = 5;
+    int32 horizontal_overflow = 6;
+    int32 vertical_overflow = 7;
+    bool resize_text_for_best_fit = 8;
+    int32 resize_text_min_size = 9;
+    int32 resize_text_max_size = 10;
+}

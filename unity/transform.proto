@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity";
+
+import "common/vector3.proto";
+import "common/quaternion.proto";
+import "unity/identifiers.proto";
+
+message TransformCreate {
+    TransformGameObjectIdentifier id = 1;
+}
+
+message TransformDestroy {
+    TransformGameObjectIdentifier id = 1;
+}
+
+message TransformUpdateSiblingIndex {
+    TransformGameObjectIdentifier id = 1;
+    int32 sibling_index = 2;
+}
+
+message TransformUpdateParent {
+    TransformGameObjectIdentifier id = 1;
+    optional TransformGameObjectIdentifier parent_id = 2;
+}
+
+message TransformUpdatePosition {
+    TransformGameObjectIdentifier id = 1;
+    common.Vector3 local_position = 2;
+    common.Vector3 world_position = 3;
+}
+
+message TransformUpdateRotation {
+    TransformGameObjectIdentifier id = 1;
+    common.Quaternion local_rotation = 2;
+    common.Quaternion world_rotation = 3;
+}
+
+message TransformUpdateScale {
+    TransformGameObjectIdentifier id = 1;
+    common.Vector3 local_scale = 2;
+    common.Vector3 world_scale = 3;
+}

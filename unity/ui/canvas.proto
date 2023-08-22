@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity.UI";
+
+import "unity/identifiers.proto";
+
+message CanvasCreate {
+    ComponentIdentifier id = 1;
+}
+
+message CanvasDestroy {
+    ComponentIdentifier id = 1;
+}
+
+message CanvasUpdateRenderMode {
+    ComponentIdentifier id = 1;
+    int32 render_mode = 2;
+}

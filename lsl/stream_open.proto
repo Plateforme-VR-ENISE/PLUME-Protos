@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package plume.sample.lsl;
+option csharp_namespace = "PLUME.Sample.LSL";
+
+import "lsl/stream_info.proto";
+
+message StreamOpen {
+    StreamInfo stream_info = 1;
+
+    // XML containing channel format, number of channels, metadata, etc
+    string xml_header = 2;
+}
