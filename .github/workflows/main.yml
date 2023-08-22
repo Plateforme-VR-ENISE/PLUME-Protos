@@ -11,10 +11,24 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' 
       - uses: arduino/setup-protoc@v2
       -
         name: Build C# samples
         run: python build_all_csharp.py
+      - name: Archive C# samples
+        uses: actions/upload-artifact@v3
+        with:
+          name: csharp-samples
+          path: |
+            generated/csharp/
       -
         name: Build Python samples
         run: python build_all_python.py
+      - name: Archive Python samples
+        uses: actions/upload-artifact@v3
+        with:
+          name: python-samples
+          path: |
+            generated/python/
