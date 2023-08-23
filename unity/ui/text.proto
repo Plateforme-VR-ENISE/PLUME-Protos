@@ -10,10 +10,6 @@ message TextCreate {
     ComponentIdentifier id = 1;
 }
 
-message TextDestroy {
-    ComponentIdentifier id = 1;
-}
-
 message TextUpdateValue {
     ComponentIdentifier id = 1;
     string text = 2;

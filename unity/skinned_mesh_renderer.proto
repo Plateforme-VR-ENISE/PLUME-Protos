@@ -10,10 +10,6 @@ message SkinnedMeshRendererCreate {
     ComponentIdentifier id = 1;
 }
 
-message SkinnedMeshRendererDestroy {
-    ComponentIdentifier id = 1;
-}
-
 message SkinnedMeshRendererUpdateEnabled {
     ComponentIdentifier id = 1;
     bool enabled = 2;

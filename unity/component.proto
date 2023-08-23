@@ -5,10 +5,6 @@ option csharp_namespace = "PLUME.Sample.Unity";
 
 import "unity/identifiers.proto";
 
-message CameraCreate {
-    ComponentIdentifier id = 1;
-}
-
-message CameraUpdate {
-    ComponentIdentifier id = 1;
+message ComponentDestroy {
+    ComponentDestroyIdentifier id = 1;
 }

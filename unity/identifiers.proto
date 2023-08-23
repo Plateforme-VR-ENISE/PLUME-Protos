@@ -13,6 +13,10 @@ message ComponentIdentifier {
     TransformGameObjectIdentifier parent_id = 2;
 }
 
+message ComponentDestroyIdentifier {
+    string id = 1;
+}
+
 message AssetIdentifier {
     string id = 1;
     int32 hash = 2;

@@ -11,10 +11,6 @@ message TMPTextCreate {
     ComponentIdentifier id = 1;
 }
 
-message TMPTextDestroy {
-    ComponentIdentifier id = 1;
-}
-
 message TMPTextUpdateValue {
     ComponentIdentifier id = 1;
     string text = 2;

@@ -9,10 +9,6 @@ message MeshRendererCreate {
     ComponentIdentifier id = 1;
 }
 
-message MeshRendererDestroy {
-    ComponentIdentifier id = 1;
-}
-
 message MeshRendererUpdateEnabled {
     ComponentIdentifier id = 1;
     bool enabled = 2;

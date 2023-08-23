@@ -10,10 +10,6 @@ message ImageCreate {
     ComponentIdentifier id = 1;
 }
 
-message ImageDestroy {
-    ComponentIdentifier id = 1;
-}
-
 message ImageUpdateColor {
     ComponentIdentifier id = 1;
     common.Vector4 color = 2;
