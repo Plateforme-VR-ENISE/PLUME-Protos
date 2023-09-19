@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity";
+
+import "unity/identifiers.proto";
+
+message RenderPipelineUpdate {
+    string name = 1;
+    optional AssetIdentifier asset_id = 2;
+}

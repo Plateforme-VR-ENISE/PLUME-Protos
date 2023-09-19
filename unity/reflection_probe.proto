@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity";
+
+import "unity/identifiers.proto";
+import "common/bounds.proto";
+import "common/color.proto";
+
+message ReflectionProbeCreate {
+    ComponentIdentifier id = 1;
+}
+
+message ReflectionProbeUpdateEnabled {
+    ComponentIdentifier id = 1;
+    bool enabled = 2;
+}
+
+message ReflectionProbeUpdate {
+    ComponentIdentifier id = 1;
+    ReflectionProbeMode mode = 2;
+    ReflectionProbeRefreshMode refresh_mode = 3;
+    ReflectionProbeTimeSlicingMode time_slicing_mode = 4;
+    ReflectionProbeClearFlags clear_flags = 5;
+    int32 importance = 6;
+    float intensity = 7;
+    float near_clip_plane = 8;
+    float far_clip_plane = 9;
+    bool render_dynamic_objects = 10;
+    bool box_projection = 11;
+    float blend_distance = 12;
+    common.Bounds bounds = 13;
+    int32 resolution = 14;
+    bool hdr = 15;
+    float shadow_distance = 16;
+    common.Color background_color = 17;
+    int32 culling_mask = 18;
+    optional AssetIdentifier custom_baked_texture_id = 19;
+    optional AssetIdentifier baked_texture_id = 20;
+}
+
+enum ReflectionProbeMode {
+    REFLECTION_PROBE_MODE_BAKED = 0;
+    REFLECTION_PROBE_MODE_CUSTOM = 1;
+    REFLECTION_PROBE_MODE_REALTIME = 2;
+}
+
+enum ReflectionProbeClearFlags {
+    REFLECTION_PROBE_CLEAR_FLAGS_SKYBOX = 0;
+    REFLECTION_PROBE_CLEAR_FLAGS_SOLID_COLOR = 1;
+}
+
+enum ReflectionProbeRefreshMode {
+    REFLECTION_PROBE_REFRESH_MODE_ON_AWAKE = 0;
+    REFLECTION_PROBE_REFRESH_MODE_EVERY_FRAME = 1;
+    REFLECTION_PROBE_REFRESH_MODE_VIA_SCRIPTING = 2;
+}
+
+enum ReflectionProbeTimeSlicingMode {
+    REFLECTION_PROBE_TIME_SLICING_MODE_ALL_FACES_AT_ONCE = 0;
+    REFLECTION_PROBE_TIME_SLICING_MODE_INDIVIDUAL_FACES = 1;
+    REFLECTION_PROBE_TIME_SLICING_MODE_NO_TIME_SLICING = 2;
+}

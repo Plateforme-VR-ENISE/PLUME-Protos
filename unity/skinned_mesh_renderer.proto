@@ -5,6 +5,7 @@ option csharp_namespace = "PLUME.Sample.Unity";
 
 import "unity/identifiers.proto";
 import "common/bounds.proto";
+import "common/vector4.proto";
 
 message SkinnedMeshRendererCreate {
     ComponentIdentifier id = 1;
@@ -35,4 +36,12 @@ message SkinnedMeshRendererUpdateBounds {
     ComponentIdentifier id = 1;
     common.Bounds local_bounds = 2;
     common.Bounds world_bounds = 3;
+}
+
+message SkinnedMeshRendererUpdateLightmap {
+    ComponentIdentifier id = 1;
+    int32 lightmap_index = 2;
+    common.Vector4 lightmap_scale_offset = 3;
+    int32 realtime_lightmap_index = 4;
+    common.Vector4 realtime_lightmap_scale_offset = 5;
 }

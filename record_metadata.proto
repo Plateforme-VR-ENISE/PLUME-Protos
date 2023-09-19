@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package plume.sample;
+option csharp_namespace = "PLUME.Sample";
+
+import "google/protobuf/timestamp.proto";
+
+message RecorderVersion {
+    string name = 1;
+    string major = 2;
+    string minor = 3;
+    string patch = 4;
+}
+
+message RecordMetadata {
+    RecorderVersion recorder_version = 1;
+
+    google.protobuf.Timestamp created_at = 2;
+
+    string identifier = 3;
+
+    // True if the samples in this record file are ordered by timestamp
+    bool sequential = 4;
+
+    map<string, string> extra_metadata = 5;
+
+    // Using a fixed size integer so that the placeholder value
+    // can be replaced without changing the length of the serialized message.
+    // Value should be -1 if not set because 0 values are not serialized.
+    sfixed64 samples_count = 6;
+
+    // Using a fixed size integer so that the placeholder value
+    // can be replaced without changing the length of the serialized message.
+    // Value should be -1 if not set because 0 values are not serialized.
+    sfixed64 duration = 7;
+}

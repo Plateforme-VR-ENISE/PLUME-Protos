@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity";
+
+import "unity/identifiers.proto";
+
+message LightmapsUpdate {
+    LightmapsMode lightmaps_mode = 1;
+    repeated LightmapData lightmaps_data = 2;
+}
+
+message LightmapData {
+    optional AssetIdentifier lightmap_color_texture_id = 1;
+    optional AssetIdentifier lightmap_dir_texture_id = 2;
+    optional AssetIdentifier lightmap_shadow_mask_texture_id = 3;
+}
+
+enum LightmapsMode {
+    LIGHTMAPS_MODE_NON_DIRECTIONAL = 0;
+    LIGHTMAPS_MODE_COMBINED_DIRECTIONAL = 1;
+}
