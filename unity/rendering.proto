@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity";
+
+enum ShadowCastingMode {
+    SHADOW_CASTING_MODE_OFF = 0;
+    SHADOW_CASTING_MODE_ON = 1;
+    SHADOW_CASTING_MODE_TWO_SIDED = 2;
+    SHADOW_CASTING_MODE_SHADOWS_ONLY = 3;
+}
+
+enum ReflectionProbeUsage {
+    REFLECTION_PROBE_USAGE_OFF = 0;
+    REFLECTION_PROBE_USAGE_BLEND_PROBES = 1;
+    REFLECTION_PROBE_USAGE_BLEND_PROBES_AND_SKYBOX = 2;
+    REFLECTION_PROBE_USAGE_SIMPLE = 3;
+}

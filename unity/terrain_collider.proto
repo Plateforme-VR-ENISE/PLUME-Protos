@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity";
+
+import "unity/identifiers.proto";
+
+message TerrainColliderCreate {
+    ComponentIdentifier id = 1;
+}
+
+message TerrainColliderUpdateEnabled {
+    ComponentIdentifier id = 1;
+    bool enabled = 2;
+}
+
+message TerrainColliderUpdate {
+    ComponentIdentifier id = 1;
+    optional AssetIdentifier terrain_data_id = 2;
+    // Physic material of the terrain (friction, bounciness)
+    optional AssetIdentifier material_id = 3;
+}
