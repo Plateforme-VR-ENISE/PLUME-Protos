@@ -22,15 +22,17 @@ message RecordMetadata {
     // True if the samples in this record file are ordered by timestamp
     bool sequential = 4;
 
-    map<string, string> extra_metadata = 5;
+    bool compressed = 5;
+
+    map<string, string> extra_metadata = 6;
 
     // Using a fixed size integer so that the placeholder value
     // can be replaced without changing the length of the serialized message.
     // Value should be -1 if not set because 0 values are not serialized.
-    sfixed64 samples_count = 6;
+    sfixed64 samples_count = 7;
 
     // Using a fixed size integer so that the placeholder value
     // can be replaced without changing the length of the serialized message.
     // Value should be -1 if not set because 0 values are not serialized.
-    sfixed64 duration = 7;
+    sfixed64 duration = 8;
 }
