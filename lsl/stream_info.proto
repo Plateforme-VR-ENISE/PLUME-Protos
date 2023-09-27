@@ -9,8 +9,15 @@ message StreamInfo {
     // is modified to take the LSL time offset into account.
     uint64 plume_raw_timestamp = 1;
 
-    // Timestamp given by the LSL dll in seconds
-    double lsl_timestamp = 2;
-    double lsl_clock_offset = 3;
-    string lsl_stream_id = 4;
+    // Local offset between the PLUME recorder clock and LSL clock, in nanoseconds
+    // Add the PLUME timestamp to this offset to get the timestamp in the LSL frame of reference
+    int64 lsl_plume_offset = 2;
+
+    // Timestamp of the sample provided by the machine emitting the samples.
+    double lsl_timestamp = 3;
+
+    // Estimated time correction between the local LSL clock (inlet) and the sample emitter (outlet)
+    double lsl_clock_offset = 4;
+
+    string lsl_stream_id = 5;
 }
