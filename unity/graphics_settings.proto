@@ -5,7 +5,7 @@ option csharp_namespace = "PLUME.Sample.Unity";
 
 import "unity/identifiers.proto";
 
-message RenderPipelineUpdate {
-    string name = 1;
-    optional AssetIdentifier asset_id = 2;
+message GraphicsSettingsUpdate {
+    optional AssetIdentifier default_render_pipeline_asset_id = 1;
+    // TODO
 }

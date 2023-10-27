@@ -4,6 +4,12 @@ package plume.sample.unity;
 option csharp_namespace = "PLUME.Sample.Unity";
 
 import "unity/identifiers.proto";
+import "unity/rendering.proto";
+import "common/vector2.proto";
+import "common/vector3.proto";
+import "common/matrix4x4.proto";
+import "common/color.proto";
+import "common/rect.proto";
 
 message CameraCreate {
     ComponentIdentifier id = 1;
@@ -11,4 +17,90 @@ message CameraCreate {
 
 message CameraUpdate {
     ComponentIdentifier id = 1;
+    float near_clip_plane = 2;
+    float far_clip_plane = 3;
+    float field_of_view = 4;
+    RenderingPath rendering_path = 5;
+    bool allow_hdr = 6;
+    bool allow_msaa = 7;
+    bool allow_dynamic_resolution = 8;
+    bool force_into_render_texture = 9;
+    float orthographic_size = 10;
+    bool orthographic = 11;
+    OpaqueSortMode opaque_sort_mode = 12;
+    TransparencySortMode transparency_sort_mode = 13;
+    common.Vector3 transparency_sort_axis = 14;
+    float depth = 15;
+    float aspect = 16;
+    common.Vector3 velocity = 17;
+    int32 culling_mask = 18;
+    int32 event_mask = 19;
+    bool layer_cull_spherical = 20;
+    CameraType camera_type = 21;
+    repeated float layer_cull_distances = 22;
+    bool use_occlusion_culling = 23;
+    common.Matrix4x4 culling_matrix = 24;
+    common.Color background_color = 25;
+    CameraClearFlags clear_flags = 26;
+    DepthTextureMode depth_texture_mode = 27;
+    bool clear_stencil_after_lighting_pass = 28;
+    bool use_physical_properties = 29;
+    common.Vector2 sensor_size = 30;
+    common.Vector2 lens_shift = 31;
+    float focal_length = 32;
+    CameraGateFitMode gate_fit = 33;
+    common.Rect rect = 34;
+    common.Rect pixel_rect = 35;
+    int32 pixel_width = 36;
+    int32 pixel_height = 37;
+    int32 scaled_pixel_width = 38;
+    int32 scaled_pixel_height = 39;
+    optional string target_texture_id = 40;
+    optional string active_texture_id = 41;
+    int32 target_display = 42;
+    common.Matrix4x4 world_to_camera_matrix = 43;
+    common.Matrix4x4 projection_matrix = 44;
+    common.Matrix4x4 non_jittered_projection_matrix = 45;
+    bool use_jittered_projection_matrix_for_transparent_rendering = 46;
+    optional int32 scene_idx = 47;
+    float stereo_separation = 48;
+    float stereo_convergence = 49;
+    CameraStereoTargetEyeMask stereo_target_eye = 50;
+}
+
+enum CameraType {
+    CAMERA_TYPE_GAME = 0;
+    CAMERA_TYPE_SCENE_VIEW = 1;
+    CAMERA_TYPE_PREVIEW = 2;
+    CAMERA_TYPE_VR = 3;
+    CAMERA_TYPE_REFLECTION = 4;
+}
+
+enum CameraClearFlags {
+    CAMERA_CLEAR_FLAGS_SKYBOX = 0;
+    CAMERA_CLEAR_FLAGS_SOLID_COLOR = 1;
+    CAMERA_CLEAR_FLAGS_DEPTH = 2;
+    CAMERA_CLEAR_FLAGS_NOTHING = 3;
+}
+
+enum CameraGateFitMode {
+    CAMERA_GATE_FIT_MODE_NONE = 0;
+    CAMERA_GATE_FIT_MODE_VERTICAL = 1;
+    CAMERA_GATE_FIT_MODE_HORIZONTAL = 2;
+    CAMERA_GATE_FIT_MODE_FILL = 3;
+    CAMERA_GATE_FIT_MODE_OVERSCAN = 4;
+}
+
+enum CameraStereoTargetEyeMask {
+    CAMERA_STEREO_TARGET_EYE_MASK_NONE = 0;
+    CAMERA_STEREO_TARGET_EYE_MASK_LEFT = 1;
+    CAMERA_STEREO_TARGET_EYE_MASK_RIGHT = 2;
+    CAMERA_STEREO_TARGET_EYE_MASK_BOTH = 3;
+}
+
+enum DepthTextureMode {
+    DEPTH_TEXTURE_MODE_NONE = 0;
+    DEPTH_TEXTURE_MODE_DEPTH = 1;
+    DEPTH_TEXTURE_MODE_DEPTH_NORMALS = 2;
+    DEPTH_TEXTURE_MODE_MOTION_VECTORS = 3;
 }

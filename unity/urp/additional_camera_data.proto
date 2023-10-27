@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package plume.sample.unity.urp;
+option csharp_namespace = "PLUME.Sample.Unity.URP";
+
+import "unity/identifiers.proto";
+import "unity/rendering.proto";
+
+message AdditionalCameraDataCreate {
+    ComponentIdentifier id = 1;
+}
+
+message AdditionalCameraDataUpdate {
+    ComponentIdentifier id = 1;
+
+    float version = 2;
+    bool render_shadows = 3;
+    CameraOverrideOption requires_depth_option = 4;
+    CameraOverrideOption requires_color_option = 5;
+    CameraRenderType render_type = 6;
+    repeated ComponentIdentifier camera_stack_ids = 7;
+    bool clear_depth = 8;
+    bool requires_depth_texture = 9;
+    bool requires_color_texture = 10;
+
+    int32 volume_layer_mask = 11;
+    TransformGameObjectIdentifier volume_trigger = 12;
+    bool requires_volume_framework_update = 13;
+    // volume_stack = 14;
+    bool render_post_processing = 15;
+    AntialiasingMode antialiasing = 16;
+    AntialiasingQuality antialiasing_quality = 17;
+    bool stop_nan = 18;
+    bool dithering = 19;
+    bool allow_xr_rendering = 20;
+}
+
+enum CameraOverrideOption {
+    CAMERA_OVERRIDE_OPTION_OFF = 0;
+    CAMERA_OVERRIDE_OPTION_ON = 1;
+    CAMERA_OVERRIDE_OPTION_USE_PIPELINE_SETTINGS = 2;
+}
+
+enum CameraRenderType {
+    CAMERA_RENDER_TYPE_BASE = 0;
+    CAMERA_RENDER_TYPE_OVERLAY = 1;
+}

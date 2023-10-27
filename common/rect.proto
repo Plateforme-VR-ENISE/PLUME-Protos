@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package plume.sample.common;
+option csharp_namespace = "PLUME.Sample.Common";
+
+message Rect {
+    float x = 1;
+    float y = 2;
+    float width = 3;
+    float height = 4;
+}
