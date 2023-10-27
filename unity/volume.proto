@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity";
+
+import "unity/identifiers.proto";
+
+message VolumeCreate {
+    ComponentIdentifier id = 1;
+}
+
+message VolumeUpdate {
+    ComponentIdentifier id = 1;
+    bool is_global = 2;
+    repeated ComponentIdentifier colliders_ids = 3;
+    float blend_distance = 4;
+    float weight = 5;
+    float priority = 6;
+    optional AssetIdentifier shared_profile = 7;
+}
+
+message VolumeUpdateEnabled {
+    ComponentIdentifier id = 1;
+    bool enabled = 2;
+}
