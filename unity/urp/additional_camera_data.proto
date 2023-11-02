@@ -12,27 +12,21 @@ message AdditionalCameraDataCreate {
 
 message AdditionalCameraDataUpdate {
     ComponentIdentifier id = 1;
-
     float version = 2;
     bool render_shadows = 3;
     CameraOverrideOption requires_depth_option = 4;
     CameraOverrideOption requires_color_option = 5;
     CameraRenderType render_type = 6;
-    repeated ComponentIdentifier camera_stack_ids = 7;
-    bool clear_depth = 8;
-    bool requires_depth_texture = 9;
-    bool requires_color_texture = 10;
-
-    int32 volume_layer_mask = 11;
-    TransformGameObjectIdentifier volume_trigger = 12;
-    bool requires_volume_framework_update = 13;
-    // volume_stack = 14;
-    bool render_post_processing = 15;
-    AntialiasingMode antialiasing = 16;
-    AntialiasingQuality antialiasing_quality = 17;
-    bool stop_nan = 18;
-    bool dithering = 19;
-    bool allow_xr_rendering = 20;
+    bool requires_depth_texture = 7;
+    bool requires_color_texture = 8;
+    int32 volume_layer_mask = 9;
+    TransformGameObjectIdentifier volume_trigger_id = 10;
+    bool render_post_processing = 11;
+    AntialiasingMode antialiasing = 12;
+    AntialiasingQuality antialiasing_quality = 13;
+    bool stop_nan = 14;
+    bool dithering = 15;
+    bool allow_xr_rendering = 16;
 }
 
 enum CameraOverrideOption {

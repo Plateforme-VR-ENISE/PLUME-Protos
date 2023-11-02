@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package plume.sample.unity.xritk;
+option csharp_namespace = "PLUME.Sample.Unity.XRITK";
+
+import "common/vector2.proto";
+import "common/vector3.proto";
+import "common/quaternion.proto";
+import "unity/identifiers.proto";
+
+message InputAction {
+    ComponentIdentifier id = 1;
+	string name = 2;
+    repeated string binding_paths = 3;
+    InputActionType type = 4;
+
+    oneof value {
+        bool boolean = 5;
+        int32 integer = 6;
+        float float = 7;
+        double double = 8;
+        common.Vector2 vector2 = 9;
+        common.Vector3 vector3 = 10;
+        common.Quaternion quaternion = 11;
+        ButtonValue button = 12;
+    }
+}
+
+message ButtonValue {
+    bool boolean = 1;
+    float float = 2;
+    float threshold = 3;
+}
+
+enum InputActionType {
+    VALUE = 0;
+    BUTTON = 1;
+    PASSTHROUGH = 2;
+}

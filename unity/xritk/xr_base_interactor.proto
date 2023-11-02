@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package plume.sample.unity.xritk;
+option csharp_namespace = "PLUME.Sample.Unity.XRITK";
+
+import "unity/identifiers.proto";
+
+message XRBaseInteractorCreate {
+    ComponentIdentifier id = 1;
+}
+
+message XRBaseInteractorDestroy {
+    ComponentIdentifier id = 1;
+}
+
+message XRBaseInteractorSetEnabled {
+    ComponentIdentifier id = 1;
+    bool enabled = 2;
+}
+
+message XRBaseInteractorHoverEnter {
+    ComponentIdentifier id = 1;
+	TransformGameObjectIdentifier interactable_current = 2;
+}
+
+message XRBaseInteractorHoverExit {
+    ComponentIdentifier id = 1;
+	TransformGameObjectIdentifier interactable_current = 2;
+}
+
+message XRBaseInteractorSelectEnter {
+    ComponentIdentifier id = 1;
+	TransformGameObjectIdentifier interactable_current = 2;
+}
+
+message XRBaseInteractorSelectExit {
+    ComponentIdentifier id = 1;
+	TransformGameObjectIdentifier interactable_current = 2;
+}
