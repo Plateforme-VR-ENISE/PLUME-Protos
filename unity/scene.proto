@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity";
+
+message SceneIdentifier {
+    string id = 1;
+}
+
+message LoadScene {
+    SceneIdentifier id = 1;
+    string path = 2;
+    int32 build_index = 3;
+    LoadSceneMode load_mode = 4;
+}
+
+message UnloadScene {
+    SceneIdentifier id = 1;
+}
+
+message ChangeActiveScene {
+    SceneIdentifier active_scene_id = 1;
+}
+
+enum LoadSceneMode {
+    LOAD_SCENE_MODE_SINGLE = 0;
+    LOAD_SCENE_MODE_ADDITIVE = 1;
+}
