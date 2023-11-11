@@ -22,3 +22,17 @@ message AssetIdentifier {
     string path = 2;
     int32 hash = 3;
 }
+
+message SceneIdentifier {
+    string id = 1;
+    string instance_id = 2;
+    string name = 3;
+    string path = 4;
+    int32 build_index = 5;
+    LoadSceneMode mode = 6;
+}
+
+enum LoadSceneMode {
+    LOAD_SCENE_MODE_SINGLE = 0;
+    LOAD_SCENE_MODE_ADDITIVE = 1;
+}
