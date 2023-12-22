@@ -12,8 +12,14 @@ message AnimationCurveKeyFrame {
     float value = 2;
     float in_tangent = 3;
     float out_tangent = 4;
-    int32 tangent_mode = 5;
-    int32 weighted_mode = 6;
-    float in_weight = 7;
-    float out_weight = 8;
+    WeightedMode weighted_mode = 5;
+    float in_weight = 6;
+    float out_weight = 7;
+}
+
+enum WeightedMode {
+    WEIGHTED_MODE_NONE = 0;
+    WEIGHTED_MODE_IN = 1;
+    WEIGHTED_MODE_OUT = 2;
+    WEIGHTED_MODE_BOTH = 3;
 }

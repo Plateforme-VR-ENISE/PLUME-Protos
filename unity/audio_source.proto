@@ -72,9 +72,17 @@ message AudioSourceUpdateReverbZoneMix {
     common.AnimationCurve reverb_zone_mix = 2;
 }
 
-message AudioSourceUpdate3DSoundSettings {
+message AudioSourceUpdateDopplerLevel {
     ComponentIdentifier id = 1;
     float doppler_level = 2;
-    common.AnimationCurve spread = 3;
-    common.AnimationCurve volume_rolloff = 4;
+}
+
+message AudioSourceUpdateSpread {
+    ComponentIdentifier id = 1;
+    common.AnimationCurve spread = 2;
+}
+
+message AudioSourceUpdateVolumeRolloff {
+    ComponentIdentifier id = 1;
+    common.AnimationCurve volume_rolloff = 2;
 }
