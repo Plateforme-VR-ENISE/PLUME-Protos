@@ -25,7 +25,7 @@ message AssetIdentifier {
 
 message SceneIdentifier {
     string id = 1;
-    string instance_id = 2;
+    string runtime_index = 2;
     string name = 3;
     string path = 4;
     int32 build_index = 5;
