@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package plume.sample.common;
+option csharp_namespace = "PLUME.Sample.Common";
+
+message AnimationCurve {
+    repeated AnimationCurveKeyFrame keyframes = 1;
+}
+
+message AnimationCurveKeyFrame {
+    float time = 1;
+    float value = 2;
+    float in_tangent = 3;
+    float out_tangent = 4;
+    int32 tangent_mode = 5;
+    int32 weighted_mode = 6;
+    float in_weight = 7;
+    float out_weight = 8;
+}
