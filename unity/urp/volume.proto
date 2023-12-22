@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-package plume.sample.unity;
-option csharp_namespace = "PLUME.Sample.Unity";
+package plume.sample.unity.urp;
+option csharp_namespace = "PLUME.Sample.Unity.URP";
 
 import "unity/identifiers.proto";
 
