@@ -25,20 +25,17 @@ message TransformUpdateParent {
     optional TransformGameObjectIdentifier parent_id = 2;
 }
 
-message TransformUpdatePosition {
+message TransformUpdateLocalPosition {
     TransformGameObjectIdentifier id = 1;
     common.Vector3 local_position = 2;
-    common.Vector3 world_position = 3;
 }
 
-message TransformUpdateRotation {
+message TransformUpdateLocalRotation {
     TransformGameObjectIdentifier id = 1;
     common.Quaternion local_rotation = 2;
-    common.Quaternion world_rotation = 3;
 }
 
-message TransformUpdateScale {
+message TransformUpdateLocalScale {
     TransformGameObjectIdentifier id = 1;
     common.Vector3 local_scale = 2;
-    common.Vector3 world_scale = 3;
 }
