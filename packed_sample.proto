@@ -3,10 +3,9 @@ syntax = "proto3";
 package plume.sample;
 option csharp_namespace = "PLUME.Sample";
 
-import "sample_header.proto";
 import "google/protobuf/any.proto";
 
 message PackedSample {
-    optional SampleHeader header = 1;
+    optional int64 timestamp = 1;
     google.protobuf.Any payload = 2;
 }
