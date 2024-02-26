@@ -15,27 +15,12 @@ message TransformDestroy {
     TransformGameObjectIdentifier id = 1;
 }
 
-message TransformUpdateSiblingIndex {
-    TransformGameObjectIdentifier id = 1;
-    int32 sibling_index = 2;
-}
-
-message TransformUpdateParent {
+message TransformUpdate {
     TransformGameObjectIdentifier id = 1;
     optional TransformGameObjectIdentifier parent_id = 2;
-}
+    optional int32 sibling_idx = 3;
 
-message TransformUpdateLocalPosition {
-    TransformGameObjectIdentifier id = 1;
-    common.Vector3 local_position = 2;
-}
-
-message TransformUpdateLocalRotation {
-    TransformGameObjectIdentifier id = 1;
-    common.Quaternion local_rotation = 2;
-}
-
-message TransformUpdateLocalScale {
-    TransformGameObjectIdentifier id = 1;
-    common.Vector3 local_scale = 2;
+    optional common.Vector3 local_position = 4;
+    optional common.Quaternion local_rotation = 5;
+    optional common.Vector3 local_scale = 6;
 }
