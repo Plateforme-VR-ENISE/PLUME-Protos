@@ -8,16 +8,16 @@ import "common/quaternion.proto";
 import "unity/identifiers.proto";
 
 message TransformCreate {
-    TransformGameObjectIdentifier id = 1;
+    ComponentIdentifier id = 1;
 }
 
 message TransformDestroy {
-    TransformGameObjectIdentifier id = 1;
+    ComponentIdentifier id = 1;
 }
 
 message TransformUpdate {
-    TransformGameObjectIdentifier id = 1;
-    optional TransformGameObjectIdentifier parent_id = 2;
+    ComponentIdentifier id = 1;
+    optional ComponentIdentifier parent_id = 2;
     optional int32 sibling_idx = 3;
 
     optional common.Vector3 local_position = 4;

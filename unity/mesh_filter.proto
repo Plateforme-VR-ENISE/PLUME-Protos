@@ -9,7 +9,12 @@ message MeshFilterCreate {
     ComponentIdentifier id = 1;
 }
 
-message MeshFilterUpdateMesh {
+message MeshFilterDestroy {
+    ComponentIdentifier id = 1;
+}
+
+message MeshFilterUpdate {
     ComponentIdentifier id = 1;
     optional AssetIdentifier mesh_id = 2;
+    optional AssetIdentifier shared_mesh_id = 3;
 }

@@ -11,36 +11,29 @@ message TMPTextCreate {
     ComponentIdentifier id = 1;
 }
 
-message TMPTextUpdateValue {
+message TMPTextDestroy {
     ComponentIdentifier id = 1;
-    string text = 2;
 }
 
-message TMPTextUpdateFont {
+message TMPTextUpdate {
     ComponentIdentifier id = 1;
-    optional AssetIdentifier font_id = 2;
-    int32 font_style = 3;
-    float font_size = 4;
-    bool auto_size = 5;
-    float font_size_min = 6;
-    float font_size_max = 7;
-}
-
-message TMPTextUpdateColor {
-    ComponentIdentifier id = 1;
-    common.Color color = 2;
-}
-
-message TMPTextUpdateExtras {
-    ComponentIdentifier id = 1;
-    float character_spacing = 2;
-    float word_spacing = 3;
-    float line_spacing = 4;
-    float paragraph_spacing = 5;
-    bool wrapping_enabled = 6;
-    int32 alignment = 7;
-    int32 overflow = 8;
-    int32 horizontal_mapping = 9;
-    int32 vertical_mapping = 10;
-    common.Vector4 margin = 11;
+    optional string text = 2;
+    optional AssetIdentifier font_id = 3;
+    optional int32 font_style = 4;
+    optional float font_size = 5;
+    optional bool auto_size = 6;
+    optional float font_size_min = 7;
+    optional float font_size_max = 8;
+    optional common.Color color = 9;
+    
+    optional float character_spacing = 10;
+    optional float word_spacing = 11;
+    optional float line_spacing = 12;
+    optional float paragraph_spacing = 13;
+    optional bool wrapping_enabled = 14;
+    optional int32 alignment = 15;
+    optional int32 overflow = 16;
+    optional int32 horizontal_mapping = 17;
+    optional int32 vertical_mapping = 18;
+    optional common.Vector4 margin = 19;
 }

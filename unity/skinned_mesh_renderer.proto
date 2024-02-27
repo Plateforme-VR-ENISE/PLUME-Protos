@@ -11,37 +11,29 @@ message SkinnedMeshRendererCreate {
     ComponentIdentifier id = 1;
 }
 
-message SkinnedMeshRendererUpdateEnabled {
+message SkinnedMeshRendererDestroy {
     ComponentIdentifier id = 1;
-    bool enabled = 2;
 }
 
-message SkinnedMeshRendererUpdateMesh {
+message SkinnedMeshRendererUpdate {
     ComponentIdentifier id = 1;
-    optional AssetIdentifier mesh_id = 2;
-}
+    optional bool enabled = 2;
+    optional AssetIdentifier mesh_id = 3;
+    optional Materials materials = 4;
+    optional Bones bones = 5;
+    optional common.Bounds local_bounds = 6;
+    optional common.Bounds world_bounds = 7;
+    optional int32 lightmap_index = 8;
+    optional common.Vector4 lightmap_scale_offset = 9;
+    optional int32 realtime_lightmap_index = 10;
+    optional common.Vector4 realtime_lightmap_scale_offset = 11;
 
-message SkinnedMeshRendererUpdateMaterials {
-    ComponentIdentifier id = 1;
-    repeated AssetIdentifier materials_ids = 2;
-}
-
-message SkinnedMeshRendererUpdateBones {
-    ComponentIdentifier id = 1;
-    repeated TransformGameObjectIdentifier bones_ids = 2;
-    optional TransformGameObjectIdentifier root_bone_id = 3;
-}
-
-message SkinnedMeshRendererUpdateBounds {
-    ComponentIdentifier id = 1;
-    common.Bounds local_bounds = 2;
-    common.Bounds world_bounds = 3;
-}
-
-message SkinnedMeshRendererUpdateLightmap {
-    ComponentIdentifier id = 1;
-    int32 lightmap_index = 2;
-    common.Vector4 lightmap_scale_offset = 3;
-    int32 realtime_lightmap_index = 4;
-    common.Vector4 realtime_lightmap_scale_offset = 5;
+    message Materials {
+        repeated AssetIdentifier ids = 1;
+    }
+    
+    message Bones {
+        repeated ComponentIdentifier bones_ids = 1;
+        ComponentIdentifier root_bone_id = 2;
+    }
 }

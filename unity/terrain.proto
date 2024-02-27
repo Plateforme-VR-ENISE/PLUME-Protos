@@ -12,38 +12,38 @@ message TerrainCreate {
     ComponentIdentifier id = 1;
 }
 
-message TerrainUpdateEnabled {
+message TerrainDestroy {
     ComponentIdentifier id = 1;
-    bool enabled = 2;
 }
 
 message TerrainUpdate {
     ComponentIdentifier id = 1;
-    optional AssetIdentifier terrain_data_id = 2;
-    float tree_distance = 3;
-    float tree_billboard_distance = 4;
-    float tree_cross_fade_length = 5;
-    int32 tree_maximum_full_lod_count = 6;
-    float detail_object_distance = 7;
-    float detail_object_density = 8;
-    float heightmap_pixel_error = 9;
-    int32 heightmap_maximum_lod = 10;
-    float basemap_distance = 11;
-    int32 lightmap_index = 12;
-    int32 realtime_lightmap_index = 13;
-    common.Vector4 lightmap_scale_offset = 14;
-    common.Vector4 realtime_lightmap_scale_offset = 15;
-    bool keep_unused_rendering_resources = 16;
-    ShadowCastingMode shadow_casting_mode = 17;
-    ReflectionProbeUsage reflection_probe_usage = 18;
-    optional AssetIdentifier material_template_id = 19;
-    bool draw_heightmap = 20;
-    bool allow_auto_connect = 21;
-    int32 grouping_id = 22;
-    bool draw_instanced = 23;
-    optional AssetIdentifier normalmap_texture_id = 24;
-    bool draw_trees_and_foliage = 25;
-    common.Vector3 patch_bounds_multiplier = 26;
-    float tree_lod_bias_multiplier = 27;
-    bool collect_detail_patches = 28;
+    optional bool enabled = 2;
+    optional AssetIdentifier terrain_data_id = 3;
+    optional float tree_distance = 4;
+    optional float tree_billboard_distance = 5;
+    optional float tree_cross_fade_length = 6;
+    optional int32 tree_maximum_full_lod_count = 7;
+    optional float detail_object_distance = 8;
+    optional float detail_object_density = 9;
+    optional float heightmap_pixel_error = 10;
+    optional int32 heightmap_maximum_lod = 11;
+    optional float basemap_distance = 12;
+    optional int32 lightmap_index = 13;
+    optional int32 realtime_lightmap_index = 14;
+    optional common.Vector4 lightmap_scale_offset = 15;
+    optional common.Vector4 realtime_lightmap_scale_offset = 16;
+    optional bool keep_unused_rendering_resources = 17;
+    optional ShadowCastingMode shadow_casting_mode = 18;
+    optional ReflectionProbeUsage reflection_probe_usage = 19;
+    optional AssetIdentifier material_template_id = 20;
+    optional bool draw_heightmap = 21;
+    optional bool allow_auto_connect = 22;
+    optional int32 grouping_id = 23;
+    optional bool draw_instanced = 24;
+    optional AssetIdentifier normalmap_texture_id = 25;
+    optional bool draw_trees_and_foliage = 26;
+    optional common.Vector3 patch_bounds_multiplier = 27;
+    optional float tree_lod_bias_multiplier = 28;
+    optional bool collect_detail_patches = 29;
 }

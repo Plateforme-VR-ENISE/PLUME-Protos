@@ -12,95 +12,56 @@ message LightCreate {
     ComponentIdentifier id = 1;
 }
 
-message LightUpdateEnabled {
+message LightDestroy {
     ComponentIdentifier id = 1;
-    bool enabled = 2;
 }
 
-message LightUpdateType {
+message LightUpdate {
     ComponentIdentifier id = 1;
-    LightType type = 2;
-}
+    optional bool enabled = 2;
+    optional LightType type = 3;
+    optional LightShape shape = 4;
+    optional float intensity = 5;
+    optional float bounce_intensity = 6;
+    optional float range = 7;
+    optional common.Color color = 8;
+    optional float color_temperature = 9;
+    optional bool use_color_temperature = 10;
+    optional float spot_angle = 11;
+    optional float inner_spot_angle = 12;
 
-message LightUpdateShape {
-    ComponentIdentifier id = 1;
-    LightShape shape = 2;
-}
+    optional LightShadows shadows = 13;
+    optional float shadow_strength = 14;
+    optional LightShadowResolution shadow_resolution = 15;
 
-message LightUpdateIntensity {
-    ComponentIdentifier id = 1;
-    float intensity = 2;
-}
-
-message LightUpdateBounceIntensity {
-    ComponentIdentifier id = 1;
-    float bounce_intensity = 2;
-}
-
-message LightUpdateRange {
-    ComponentIdentifier id = 1;
-    float range = 2;
-}
-
-message LightUpdateColor {
-    ComponentIdentifier id = 1;
-    common.Color color = 2;
-    float color_temperature = 3;
-    bool use_color_temperature = 4;
-}
-
-message LightUpdateSpotAngle {
-    ComponentIdentifier id = 1;
-    float spot_angle = 2;
-    float inner_spot_angle = 3;
-}
-
-message LightUpdateShadows {
-    ComponentIdentifier id = 1;
-    LightShadows shadows = 2;
-
-    float shadow_strength = 3;
-    
-    LightShadowResolution shadow_resolution = 4;
-
-    common.Matrix4x4 shadow_matrix_override = 5;
-    bool use_shadow_matrix_override = 6;
-    float shadow_bias = 7;
-    float shadow_normal_bias = 8;
-    float shadow_near_plane = 9;
-    bool use_view_frustum_for_shadow_caster_cull = 10;
+    optional common.Matrix4x4 shadow_matrix_override = 16;
+    optional bool use_shadow_matrix_override = 17;
+    optional float shadow_bias = 18;
+    optional float shadow_normal_bias = 19;
+    optional float shadow_near_plane = 20;
+    optional bool use_view_frustum_for_shadow_caster_cull = 21;
 
     // Only for directional lights
-    repeated float layer_shadow_cull_distances = 11;
-
+    optional LayerShadowCullDistances layer_shadow_cull_distances = 22;
     // Only for Built-in RP
-    optional int32 shadow_custom_resolution = 12;
-
+    optional int32 shadow_custom_resolution = 23;
     // Not supported on legacy renderers
-    optional LightShadowCasterMode light_shadow_caster_mode = 13;
+    optional LightShadowCasterMode light_shadow_caster_mode = 24;
+
+    optional int32 rendering_layer_mask = 25;
+
+    optional int32 culling_mask = 26;
+    optional common.Vector4 bounding_sphere_override = 27;
+    optional bool use_bounding_sphere_override = 28;
+
+    optional AssetIdentifier cookie_id = 29;
+    optional float cookie_size = 30;
+
+    optional AssetIdentifier flare_id = 31;
 }
 
-message LightUpdateRenderingLayerMask {
-    ComponentIdentifier id = 1;
-    int32 rendering_layer_mask = 2;
-}
-
-message LightUpdateCulling {
-    ComponentIdentifier id = 1;
-    int32 culling_mask = 2;
-    common.Vector4 bounding_sphere_override = 3;
-    bool use_bounding_sphere_override = 4;
-}
-
-message LightUpdateCookie {
-    ComponentIdentifier id = 1;
-    optional AssetIdentifier cookie_id = 2;
-    optional float cookie_size = 3;
-}
-
-message LightUpdateFlare {
-    ComponentIdentifier id = 1;
-    optional AssetIdentifier flare_id = 2;
+message LayerShadowCullDistances {
+    repeated float distances = 1;
 }
 
 enum LightType {

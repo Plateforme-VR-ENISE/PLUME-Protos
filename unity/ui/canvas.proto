@@ -9,7 +9,11 @@ message CanvasCreate {
     ComponentIdentifier id = 1;
 }
 
-message CanvasUpdateRenderMode {
+message CanvasDestroy {
     ComponentIdentifier id = 1;
-    int32 render_mode = 2;
+}
+
+message CanvasUpdate {
+    ComponentIdentifier id = 1;
+    optional int32 render_mode = 2;
 }

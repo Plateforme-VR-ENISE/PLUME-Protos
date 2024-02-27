@@ -10,12 +10,12 @@ message ImageCreate {
     ComponentIdentifier id = 1;
 }
 
-message ImageUpdateColor {
+message ImageDestroy {
     ComponentIdentifier id = 1;
-    common.Vector4 color = 2;
 }
 
-message ImageUpdateSprite {
+message ImageUpdate {
     ComponentIdentifier id = 1;
-    optional AssetIdentifier sprite_id = 2;
+    optional common.Vector4 color = 2;
+    optional AssetIdentifier sprite_id = 3;
 }

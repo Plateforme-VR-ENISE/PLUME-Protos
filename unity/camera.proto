@@ -15,51 +15,59 @@ message CameraCreate {
     ComponentIdentifier id = 1;
 }
 
+message CameraDestroy {
+    ComponentIdentifier id = 1;
+}
+
 message CameraUpdate {
     ComponentIdentifier id = 1;
-    float near_clip_plane = 2;
-    float far_clip_plane = 3;
-    float field_of_view = 4;
-    RenderingPath rendering_path = 5;
-    bool allow_hdr = 6;
-    bool allow_msaa = 7;
-    bool allow_dynamic_resolution = 8;
-    bool force_into_render_texture = 9;
-    float orthographic_size = 10;
-    bool orthographic = 11;
-    OpaqueSortMode opaque_sort_mode = 12;
-    TransparencySortMode transparency_sort_mode = 13;
-    common.Vector3 transparency_sort_axis = 14;
-    float depth = 15;
-    float aspect = 16;
-    int32 culling_mask = 17;
-    int32 event_mask = 18;
-    bool layer_cull_spherical = 19;
-    CameraType camera_type = 20;
-    repeated float layer_cull_distances = 21;
-    bool use_occlusion_culling = 22;
-    common.Matrix4x4 culling_matrix = 23;
-    common.Color background_color = 24;
-    CameraClearFlags clear_flags = 25;
-    DepthTextureMode depth_texture_mode = 26;
-    bool clear_stencil_after_lighting_pass = 27;
-    bool use_physical_properties = 28;
-    common.Vector2 sensor_size = 29;
-    common.Vector2 lens_shift = 30;
-    float focal_length = 31;
-    CameraGateFitMode gate_fit = 32;
-    common.Rect rect = 33;
-    common.Rect pixel_rect = 34;
+    optional float near_clip_plane = 2;
+    optional float far_clip_plane = 3;
+    optional float field_of_view = 4;
+    optional RenderingPath rendering_path = 5;
+    optional bool allow_hdr = 6;
+    optional bool allow_msaa = 7;
+    optional bool allow_dynamic_resolution = 8;
+    optional bool force_into_render_texture = 9;
+    optional float orthographic_size = 10;
+    optional bool orthographic = 11;
+    optional OpaqueSortMode opaque_sort_mode = 12;
+    optional TransparencySortMode transparency_sort_mode = 13;
+    optional common.Vector3 transparency_sort_axis = 14;
+    optional float depth = 15;
+    optional float aspect = 16;
+    optional int32 culling_mask = 17;
+    optional int32 event_mask = 18;
+    optional bool layer_cull_spherical = 19;
+    optional CameraType camera_type = 20;
+    optional CameraLayerCullDistances layer_cull_distances = 21;
+    optional bool use_occlusion_culling = 22;
+    optional common.Matrix4x4 culling_matrix = 23;
+    optional common.Color background_color = 24;
+    optional CameraClearFlags clear_flags = 25;
+    optional DepthTextureMode depth_texture_mode = 26;
+    optional bool clear_stencil_after_lighting_pass = 27;
+    optional bool use_physical_properties = 28;
+    optional common.Vector2 sensor_size = 29;
+    optional common.Vector2 lens_shift = 30;
+    optional float focal_length = 31;
+    optional CameraGateFitMode gate_fit = 32;
+    optional common.Rect rect = 33;
+    optional common.Rect pixel_rect = 34;
     optional string target_texture_id = 35;
-    int32 target_display = 36;
-    common.Matrix4x4 world_to_camera_matrix = 37;
-    common.Matrix4x4 projection_matrix = 38;
-    common.Matrix4x4 non_jittered_projection_matrix = 39;
-    bool use_jittered_projection_matrix_for_transparent_rendering = 40;
+    optional int32 target_display = 36;
+    optional common.Matrix4x4 world_to_camera_matrix = 37;
+    optional common.Matrix4x4 projection_matrix = 38;
+    optional common.Matrix4x4 non_jittered_projection_matrix = 39;
+    optional bool use_jittered_projection_matrix_for_transparent_rendering = 40;
     optional int32 scene_idx = 41;
-    float stereo_separation = 42;
-    float stereo_convergence = 43;
-    CameraStereoTargetEyeMask stereo_target_eye = 44;
+    optional float stereo_separation = 42;
+    optional float stereo_convergence = 43;
+    optional CameraStereoTargetEyeMask stereo_target_eye = 44;
+}
+
+message CameraLayerCullDistances {
+    repeated float distances = 1;
 }
 
 enum CameraType {

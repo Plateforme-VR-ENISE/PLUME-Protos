@@ -9,14 +9,14 @@ message TerrainColliderCreate {
     ComponentIdentifier id = 1;
 }
 
-message TerrainColliderUpdateEnabled {
+message TerrainColliderDestroy {
     ComponentIdentifier id = 1;
-    bool enabled = 2;
 }
 
 message TerrainColliderUpdate {
     ComponentIdentifier id = 1;
-    optional AssetIdentifier terrain_data_id = 2;
+    optional bool enabled = 2;
+    optional AssetIdentifier terrain_data_id = 3;
     // Physic material of the terrain (friction, bounciness)
-    optional AssetIdentifier material_id = 3;
+    optional AssetIdentifier material_id = 4;
 }

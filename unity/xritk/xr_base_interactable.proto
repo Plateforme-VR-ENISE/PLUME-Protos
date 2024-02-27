@@ -13,37 +13,37 @@ message XRBaseInteractableDestroy {
     ComponentIdentifier id = 1;
 }
 
-message XRBaseInteractableSetEnabled {
+message XRBaseInteractableUpdate {
     ComponentIdentifier id = 1;
-    bool enabled = 2;
+    optional bool enabled = 2;
 }
 
 message XRBaseInteractableHoverEnter {
     ComponentIdentifier id = 1;
-	TransformGameObjectIdentifier interactor_current = 2;
+	ComponentIdentifier interactor_current = 2;
 }
 
 message XRBaseInteractableHoverExit {
     ComponentIdentifier id = 1;
-	TransformGameObjectIdentifier interactor_current = 2;
+	ComponentIdentifier interactor_current = 2;
 }
 
 message XRBaseInteractableSelectEnter {
     ComponentIdentifier id = 1;
-	TransformGameObjectIdentifier interactor_current = 2;
+	ComponentIdentifier interactor_current = 2;
 }
 
 message XRBaseInteractableSelectExit {
     ComponentIdentifier id = 1;
-	TransformGameObjectIdentifier interactor_current = 2;
+	ComponentIdentifier interactor_current = 2;
 }
 
 message XRBaseInteractableActivateEnter {
     ComponentIdentifier id = 1;
-	TransformGameObjectIdentifier interactor_current = 2;
+	ComponentIdentifier interactor_current = 2;
 }
 
 message XRBaseInteractableActivateExit {
     ComponentIdentifier id = 1;
-	TransformGameObjectIdentifier interactor_current = 2;
+	ComponentIdentifier interactor_current = 2;
 }

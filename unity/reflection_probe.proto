@@ -11,32 +11,32 @@ message ReflectionProbeCreate {
     ComponentIdentifier id = 1;
 }
 
-message ReflectionProbeUpdateEnabled {
+message ReflectionProbeDestroy {
     ComponentIdentifier id = 1;
-    bool enabled = 2;
 }
 
 message ReflectionProbeUpdate {
     ComponentIdentifier id = 1;
-    ReflectionProbeMode mode = 2;
-    ReflectionProbeRefreshMode refresh_mode = 3;
-    ReflectionProbeTimeSlicingMode time_slicing_mode = 4;
-    ReflectionProbeClearFlags clear_flags = 5;
-    int32 importance = 6;
-    float intensity = 7;
-    float near_clip_plane = 8;
-    float far_clip_plane = 9;
-    bool render_dynamic_objects = 10;
-    bool box_projection = 11;
-    float blend_distance = 12;
-    common.Bounds bounds = 13;
-    int32 resolution = 14;
-    bool hdr = 15;
-    float shadow_distance = 16;
-    common.Color background_color = 17;
-    int32 culling_mask = 18;
-    optional AssetIdentifier custom_baked_texture_id = 19;
-    optional AssetIdentifier baked_texture_id = 20;
+    optional bool enabled = 2;
+    optional ReflectionProbeMode mode = 3;
+    optional ReflectionProbeRefreshMode refresh_mode = 4;
+    optional ReflectionProbeTimeSlicingMode time_slicing_mode = 5;
+    optional ReflectionProbeClearFlags clear_flags = 6;
+    optional int32 importance = 7;
+    optional float intensity = 8;
+    optional float near_clip_plane = 9;
+    optional float far_clip_plane = 10;
+    optional bool render_dynamic_objects = 11;
+    optional bool box_projection = 12;
+    optional float blend_distance = 13;
+    optional common.Bounds bounds = 14;
+    optional int32 resolution = 15;
+    optional bool hdr = 16;
+    optional float shadow_distance = 17;
+    optional common.Color background_color = 18;
+    optional int32 culling_mask = 19;
+    optional AssetIdentifier custom_baked_texture_id = 20;
+    optional AssetIdentifier baked_texture_id = 21;
 }
 
 enum ReflectionProbeMode {

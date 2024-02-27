@@ -10,20 +10,21 @@ message MeshRendererCreate {
     ComponentIdentifier id = 1;
 }
 
-message MeshRendererUpdateEnabled {
+message MeshRendererDestroy {
     ComponentIdentifier id = 1;
-    bool enabled = 2;
 }
 
-message MeshRendererUpdateMaterials {
+message MeshRendererUpdate {
     ComponentIdentifier id = 1;
-    repeated AssetIdentifier materials_ids = 2;
-}
+    optional bool enabled = 2;
+    optional Materials materials = 3;
+    optional Materials shared_materials = 4;
+    optional int32 lightmap_index = 5;
+    optional common.Vector4 lightmap_scale_offset = 6;
+    optional int32 realtime_lightmap_index = 7;
+    optional common.Vector4 realtime_lightmap_scale_offset = 8;
 
-message MeshRendererUpdateLightmap {
-    ComponentIdentifier id = 1;
-    int32 lightmap_index = 2;
-    common.Vector4 lightmap_scale_offset = 3;
-    int32 realtime_lightmap_index = 4;
-    common.Vector4 realtime_lightmap_scale_offset = 5;
+    message Materials {
+        repeated AssetIdentifier ids = 1;
+    }
 }

@@ -9,8 +9,12 @@ message CanvasScalerCreate {
     ComponentIdentifier id = 1;
 }
 
-message CanvasScalerUpdatePixelsPerUnit {
+message CanvasScalerDestroy {
     ComponentIdentifier id = 1;
-    float dynamic_pixels_per_unit = 2;
-    float reference_pixels_per_unit = 3;
+}
+
+message CanvasScalerUpdate {
+    ComponentIdentifier id = 1;
+    optional float dynamic_pixels_per_unit = 2;
+    optional float reference_pixels_per_unit = 3;
 }

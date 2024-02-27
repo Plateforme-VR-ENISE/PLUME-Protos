@@ -10,23 +10,27 @@ message AdditionalCameraDataCreate {
     ComponentIdentifier id = 1;
 }
 
+message AdditionalCameraDataDestroy {
+    ComponentIdentifier id = 1;
+}
+
 message AdditionalCameraDataUpdate {
     ComponentIdentifier id = 1;
-    float version = 2;
-    bool render_shadows = 3;
-    CameraOverrideOption requires_depth_option = 4;
-    CameraOverrideOption requires_color_option = 5;
-    CameraRenderType render_type = 6;
-    bool requires_depth_texture = 7;
-    bool requires_color_texture = 8;
-    int32 volume_layer_mask = 9;
-    TransformGameObjectIdentifier volume_trigger_id = 10;
-    bool render_post_processing = 11;
-    AntialiasingMode antialiasing = 12;
-    AntialiasingQuality antialiasing_quality = 13;
-    bool stop_nan = 14;
-    bool dithering = 15;
-    bool allow_xr_rendering = 16;
+    optional float version = 2;
+    optional bool render_shadows = 3;
+    optional CameraOverrideOption requires_depth_option = 4;
+    optional CameraOverrideOption requires_color_option = 5;
+    optional CameraRenderType render_type = 6;
+    optional bool requires_depth_texture = 7;
+    optional bool requires_color_texture = 8;
+    optional int32 volume_layer_mask = 9;
+    optional ComponentIdentifier volume_trigger_id = 10;
+    optional bool render_post_processing = 11;
+    optional AntialiasingMode antialiasing = 12;
+    optional AntialiasingQuality antialiasing_quality = 13;
+    optional bool stop_nan = 14;
+    optional bool dithering = 15;
+    optional bool allow_xr_rendering = 16;
 }
 
 enum CameraOverrideOption {

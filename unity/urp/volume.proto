@@ -11,12 +11,16 @@ message VolumeCreate {
 
 message VolumeUpdate {
     ComponentIdentifier id = 1;
-    bool is_global = 2;
-    repeated ComponentIdentifier colliders_ids = 3;
-    float blend_distance = 4;
-    float weight = 5;
-    float priority = 6;
+    optional bool is_global = 2;
+    optional Colliders colliders = 3;
+    optional float blend_distance = 4;
+    optional float weight = 5;
+    optional float priority = 6;
     optional AssetIdentifier shared_profile_id = 7;
+
+    message Colliders {
+        repeated ComponentIdentifier ids = 1;
+    }
 }
 
 message VolumeUpdateEnabled {
