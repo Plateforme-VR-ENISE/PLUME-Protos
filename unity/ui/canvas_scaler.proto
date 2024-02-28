@@ -4,6 +4,7 @@ package plume.sample.unity;
 option csharp_namespace = "PLUME.Sample.Unity.UI";
 
 import "unity/identifiers.proto";
+import "common/vector2.proto";
 
 message CanvasScalerCreate {
     ComponentIdentifier id = 1;
@@ -15,7 +16,34 @@ message CanvasScalerDestroy {
 
 message CanvasScalerUpdate {
     ComponentIdentifier id = 1;
-    optional float dynamic_pixels_per_unit = 2;
+    optional ScaleMode ui_scale_mode = 2;
     optional float reference_pixels_per_unit = 3;
     optional float scale_factor = 4;
+    optional common.Vector2 reference_resolution = 5;
+    optional ScreenMatchMode screen_match_mode = 6;
+    optional float match_width_or_height = 7;
+    optional Unit physical_unit = 8;
+    optional float fallback_screen_dpi = 9;
+    optional float default_sprite_dpi = 10;
+    optional float dynamic_pixels_per_unit = 11;
+}
+
+enum ScaleMode {
+    SCALE_MODE_CONSTANT_PIXEL_SIZE = 0;
+    SCALE_MODE_SCALE_WITH_SCREEN_SIZE = 1;
+    SCALE_MODE_CONSTANT_PHYSICAL_SIZE = 2;
+}
+
+enum ScreenMatchMode {
+    SCREEN_MATCH_MODE_MATCH_WIDTH_OR_HEIGHT = 0;
+    SCREEN_MATCH_MODE_EXPAND = 1;
+    SCREEN_MATCH_MODE_SHRINK = 2;
+}
+
+enum Unit {
+    UNIT_CENTIMETERS = 0;
+    UNIT_MILLIMETERS = 1;
+    UNIT_INCHES = 2;
+    UNIT_POINTS = 3;
+    UNIT_PICAS = 4;
 }
