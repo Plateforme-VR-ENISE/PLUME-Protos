@@ -16,5 +16,4 @@ message MeshFilterDestroy {
 message MeshFilterUpdate {
     ComponentIdentifier id = 1;
     optional AssetIdentifier mesh_id = 2;
-    optional AssetIdentifier shared_mesh_id = 3;
 }
