@@ -15,5 +15,11 @@ message CanvasDestroy {
 
 message CanvasUpdate {
     ComponentIdentifier id = 1;
-    optional int32 render_mode = 2;
+    optional RenderMode render_mode = 2;
+}
+
+enum RenderMode {
+    RENDER_MODE_SCREEN_SPACE_OVERLAY = 0;
+    RENDER_MODE_SCREEN_SPACE_CAMERA = 1;
+    RENDER_MODE_WORLD_SPACE = 2;
 }
