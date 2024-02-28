@@ -14,7 +14,7 @@ message TextDestroy {
     ComponentIdentifier id = 1;
 }
 
-message TextUpdateValue {
+message TextUpdate {
     ComponentIdentifier id = 1;
     optional string text = 2;
     optional AssetIdentifier font_id = 3;
