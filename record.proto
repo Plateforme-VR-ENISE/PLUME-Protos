@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package plume.sample;
+option csharp_namespace = "PLUME.Sample";
+
+import "google/protobuf/timestamp.proto";
+
+message RecorderVersion {
+    string name = 1;
+    string major = 2;
+    string minor = 3;
+    string patch = 4;
+}
+
+message RecordMetadata {
+    RecorderVersion recorder_version = 1;
+    // Unix timestamp in seconds of when the recording started
+    google.protobuf.Timestamp start_time = 2;
+    string name = 3;
+    string extra_metadata = 4;
+}
+
+message RecordMetrics {
+    bool is_sequential = 1;
+    uint64 duration = 2;
+    uint64 n_samples = 3;
+}
