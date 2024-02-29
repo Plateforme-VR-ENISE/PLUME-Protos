@@ -3,10 +3,6 @@ syntax = "proto3";
 package plume.sample.unity;
 option csharp_namespace = "PLUME.Sample.Unity";
 
-message ObjectIdentifier {
-    string id = 1;
-}
-
 message GameObjectIdentifier {
     string game_object_id = 1;
     string transform_id = 2;

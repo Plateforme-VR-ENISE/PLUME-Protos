@@ -4,8 +4,6 @@ package plume.sample.unity;
 option csharp_namespace = "PLUME.Sample.Unity";
 
 import "unity/identifiers.proto";
-import "common/bounds.proto";
-import "common/vector4.proto";
 
 message SkinnedMeshRendererCreate {
     ComponentIdentifier id = 1;
@@ -17,20 +15,9 @@ message SkinnedMeshRendererDestroy {
 
 message SkinnedMeshRendererUpdate {
     ComponentIdentifier id = 1;
-    optional bool enabled = 2;
-    optional AssetIdentifier mesh_id = 3;
-    optional Materials materials = 4;
-    optional Bones bones = 5;
-    optional common.Bounds local_bounds = 6;
-    optional common.Bounds world_bounds = 7;
-    optional int32 lightmap_index = 8;
-    optional common.Vector4 lightmap_scale_offset = 9;
-    optional int32 realtime_lightmap_index = 10;
-    optional common.Vector4 realtime_lightmap_scale_offset = 11;
-
-    message Materials {
-        repeated AssetIdentifier ids = 1;
-    }
+    
+    optional AssetIdentifier mesh_id = 2;
+    optional Bones bones = 3;
     
     message Bones {
         repeated ComponentIdentifier bones_ids = 1;

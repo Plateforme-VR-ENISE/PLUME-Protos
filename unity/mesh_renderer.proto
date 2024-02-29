@@ -4,7 +4,6 @@ package plume.sample.unity;
 option csharp_namespace = "PLUME.Sample.Unity";
 
 import "unity/identifiers.proto";
-import "common/vector4.proto";
 
 message MeshRendererCreate {
     ComponentIdentifier id = 1;
@@ -12,19 +11,4 @@ message MeshRendererCreate {
 
 message MeshRendererDestroy {
     ComponentIdentifier id = 1;
-}
-
-message MeshRendererUpdate {
-    ComponentIdentifier id = 1;
-    optional bool enabled = 2;
-    optional Materials materials = 3;
-    optional Materials shared_materials = 4;
-    optional int32 lightmap_index = 5;
-    optional common.Vector4 lightmap_scale_offset = 6;
-    optional int32 realtime_lightmap_index = 7;
-    optional common.Vector4 realtime_lightmap_scale_offset = 8;
-
-    message Materials {
-        repeated AssetIdentifier ids = 1;
-    }
 }
