@@ -4,7 +4,7 @@ package plume.sample.unity;
 option csharp_namespace = "PLUME.Sample.Unity.UI";
 
 import "unity/identifiers.proto";
-import "common/vector4.proto";
+import "common/color.proto";
 
 message ImageCreate {
     ComponentIdentifier id = 1;
@@ -16,6 +16,6 @@ message ImageDestroy {
 
 message ImageUpdate {
     ComponentIdentifier id = 1;
-    optional common.Vector4 color = 2;
+    optional common.Color color = 2;
     optional AssetIdentifier sprite_id = 3;
 }
