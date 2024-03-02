@@ -60,10 +60,9 @@ message CameraUpdate {
     optional common.Matrix4x4 projection_matrix = 38;
     optional common.Matrix4x4 non_jittered_projection_matrix = 39;
     optional bool use_jittered_projection_matrix_for_transparent_rendering = 40;
-    optional int32 scene_idx = 41;
-    optional float stereo_separation = 42;
-    optional float stereo_convergence = 43;
-    optional CameraStereoTargetEyeMask stereo_target_eye = 44;
+    optional float stereo_separation = 41;
+    optional float stereo_convergence = 42;
+    optional CameraStereoTargetEyeMask stereo_target_eye = 43;
 }
 
 message CameraLayerCullDistances {
