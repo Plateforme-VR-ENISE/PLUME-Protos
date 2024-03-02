@@ -26,7 +26,7 @@ message CanvasUpdate {
     optional int32 sorting_order = 10;
     optional int32 target_display = 11;
     optional int32 sorting_layer_id = 12;
-    optional AdditionalCanvasShaderChannels additional_shader_channels = 13;
+    optional uint32 additional_shader_channels = 13;
     optional string sorting_layer_name = 14;
     optional StandaloneRenderResize update_rect_transform_for_standalone = 15;
     optional ComponentIdentifier world_camera = 16;
@@ -42,13 +42,4 @@ enum RenderMode {
 enum StandaloneRenderResize {
     STANDALONE_RENDER_RESIZE_ENABLED = 0;
     STANDALONE_RENDER_RESIZE_DISABLED = 1;
-}
-
-enum AdditionalCanvasShaderChannels {
-    ADDITIONAL_CANVAS_SHADER_CHANNELS_NONE = 0;
-    ADDITIONAL_CANVAS_SHADER_CHANNELS_TEX_COORD_1 = 1;
-    ADDITIONAL_CANVAS_SHADER_CHANNELS_TEX_COORD_2 = 2;
-    ADDITIONAL_CANVAS_SHADER_CHANNELS_TEX_COORD_3 = 3;
-    ADDITIONAL_CANVAS_SHADER_CHANNELS_NORMAL = 4;
-    ADDITIONAL_CANVAS_SHADER_CHANNELS_TANGENT = 5;
 }

@@ -39,13 +39,13 @@ message CameraUpdate {
     optional int32 culling_mask = 17;
     optional int32 event_mask = 18;
     optional bool layer_cull_spherical = 19;
-    optional CameraType camera_type = 20;
+    optional uint32 camera_type = 20;
     optional CameraLayerCullDistances layer_cull_distances = 21;
     optional bool use_occlusion_culling = 22;
     optional common.Matrix4x4 culling_matrix = 23;
     optional common.Color background_color = 24;
-    optional CameraClearFlags clear_flags = 25;
-    optional DepthTextureMode depth_texture_mode = 26;
+    optional uint32 clear_flags = 25;
+    optional uint32 depth_texture_mode = 26;
     optional bool clear_stencil_after_lighting_pass = 27;
     optional bool use_physical_properties = 28;
     optional common.Vector2 sensor_size = 29;
@@ -69,21 +69,6 @@ message CameraLayerCullDistances {
     repeated float distances = 1;
 }
 
-enum CameraType {
-    CAMERA_TYPE_GAME = 0;
-    CAMERA_TYPE_SCENE_VIEW = 1;
-    CAMERA_TYPE_PREVIEW = 2;
-    CAMERA_TYPE_VR = 3;
-    CAMERA_TYPE_REFLECTION = 4;
-}
-
-enum CameraClearFlags {
-    CAMERA_CLEAR_FLAGS_SKYBOX = 0;
-    CAMERA_CLEAR_FLAGS_SOLID_COLOR = 1;
-    CAMERA_CLEAR_FLAGS_DEPTH = 2;
-    CAMERA_CLEAR_FLAGS_NOTHING = 3;
-}
-
 enum CameraGateFitMode {
     CAMERA_GATE_FIT_MODE_NONE = 0;
     CAMERA_GATE_FIT_MODE_VERTICAL = 1;
@@ -97,11 +82,4 @@ enum CameraStereoTargetEyeMask {
     CAMERA_STEREO_TARGET_EYE_MASK_LEFT = 1;
     CAMERA_STEREO_TARGET_EYE_MASK_RIGHT = 2;
     CAMERA_STEREO_TARGET_EYE_MASK_BOTH = 3;
-}
-
-enum DepthTextureMode {
-    DEPTH_TEXTURE_MODE_NONE = 0;
-    DEPTH_TEXTURE_MODE_DEPTH = 1;
-    DEPTH_TEXTURE_MODE_DEPTH_NORMALS = 2;
-    DEPTH_TEXTURE_MODE_MOTION_VECTORS = 3;
 }
