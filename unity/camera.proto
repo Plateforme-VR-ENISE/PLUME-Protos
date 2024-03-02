@@ -54,7 +54,7 @@ message CameraUpdate {
     optional CameraGateFitMode gate_fit = 32;
     optional common.Rect rect = 33;
     optional common.Rect pixel_rect = 34;
-    optional string target_texture_id = 35;
+    optional AssetIdentifier target_texture_id = 35;
     optional int32 target_display = 36;
     optional common.Matrix4x4 world_to_camera_matrix = 37;
     optional common.Matrix4x4 projection_matrix = 38;
