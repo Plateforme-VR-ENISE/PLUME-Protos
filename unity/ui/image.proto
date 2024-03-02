@@ -18,4 +18,5 @@ message ImageUpdate {
     ComponentIdentifier id = 1;
     optional common.Color color = 2;
     optional AssetIdentifier sprite_id = 3;
+    optional AssetIdentifier material_id = 4;
 }
