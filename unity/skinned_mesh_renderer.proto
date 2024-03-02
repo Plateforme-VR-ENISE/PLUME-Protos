@@ -17,10 +17,20 @@ message SkinnedMeshRendererUpdate {
     ComponentIdentifier id = 1;
     
     optional AssetIdentifier mesh_id = 2;
-    optional Bones bones = 3;
+    optional ComponentIdentifier root_bone_id = 3;
+    optional Bones bones = 4;
+    optional BlendShapeWeights blend_shape_weights = 5;
     
     message Bones {
-        repeated ComponentIdentifier bones_ids = 1;
-        ComponentIdentifier root_bone_id = 2;
+        repeated ComponentIdentifier ids = 1;
+    }
+
+    message BlendShapeWeights {
+        repeated BlendShapeWeight weights = 1;
+
+        message BlendShapeWeight {
+            int32 index = 1;
+            float weight = 2;
+        }
     }
 }
