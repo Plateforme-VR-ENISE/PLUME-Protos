@@ -10,13 +10,13 @@ message StreamSample {
     StreamInfo stream_info = 1;
 
     oneof values {
-        RepeatedFloat float_value = 5;
-        RepeatedDouble double_value = 6;
-        RepeatedString string_value = 7;
-        RepeatedInt32 int8_value = 8;
-        RepeatedInt32 int16_value = 9;
-        RepeatedInt32 int32_value = 10;
-        RepeatedInt64 int64_value = 11;
+        RepeatedFloat float_value = 2;
+        RepeatedDouble double_value = 3;
+        RepeatedString string_value = 4;
+        RepeatedInt8 int8_value = 5;
+        RepeatedInt16 int16_value = 6;
+        RepeatedInt32 int32_value = 7;
+        RepeatedInt64 int64_value = 8;
     }
 }
 
@@ -30,6 +30,14 @@ message RepeatedDouble {
 
 message RepeatedString {
     repeated string value = 1;
+}
+
+message RepeatedInt8 {
+    repeated int32 value = 1;
+}
+
+message RepeatedInt16 {
+    repeated int32 value = 1;
 }
 
 message RepeatedInt32 {
