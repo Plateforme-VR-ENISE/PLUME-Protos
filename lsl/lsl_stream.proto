@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package plume.sample.lsl;
+option csharp_namespace = "PLUME.Sample.LSL";
+
+message StreamOpen {
+    // Unique identifier of the stream used by the recorder
+    // To get the session id, uid and source id, use the xml_header
+    string stream_id = 1;
+
+    // XML header containing: name, type, channel count, nominal sampling rate, etc.
+    // Cf. https://github.com/sccn/xdf/wiki/Specifications#streamheader-chunk
+    string xml_header = 2;
+}
+
+message StreamClose {
+    // Unique identifier of the stream used by the recorder
+    // To get the session id, uid and source id, use the xml_header
+    // provided in the StreamOpen sample
+    string stream_id = 1;
+}
+
+message StreamSample {
+    // Unique identifier of the stream used by the recorder
+    // To get the session id, uid and source id, use the xml_header
+    // provided in the StreamOpen sample
+    string stream_id = 1;
+    
+    oneof values {
+        RepeatedFloat float_values = 2;
+        RepeatedDouble double_values = 3;
+        RepeatedString string_values = 4;
+        RepeatedInt8 int8_values = 5;
+        RepeatedInt16 int16_values = 6;
+        RepeatedInt32 int32_values = 7;
+        RepeatedInt64 int64_values = 8;
+    }
+
+    message RepeatedFloat {
+        repeated float value = 1;
+    }
+    
+    message RepeatedDouble {
+        repeated double value = 1;
+    }
+    
+    message RepeatedString {
+        repeated string value = 1;
+    }
+    
+    message RepeatedInt8 {
+        repeated int32 value = 1;
+    }
+    
+    message RepeatedInt16 {
+        repeated int32 value = 1;
+    }
+    
+    message RepeatedInt32 {
+        repeated int32 value = 1;
+    }
+    
+    message RepeatedInt64 {
+        repeated int64 value = 1;
+    }
+}
