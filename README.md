@@ -1,12 +1,36 @@
 <a name="readme-top"></a>
 <div align="center">
-    <h1>PLUME-Protos</h1>
+    <a href="https://github.com/liris-xr/PLUME">
+        <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="/Documentation~/Images/plume_banner_dark.png">
+            <source media="(prefers-color-scheme: light)" srcset="/Documentation~/Images/plume_banner_light.png">
+            <img alt="PLUME banner." src="/Documentation~/Images/plume_banner_light.png">
+        </picture>
+    </a>
+    <br />
+    <br />
+    <p align="center">
+        <strong>PLUME: Record, Replay, Analyze and Share User Behavior in 6DoF XR Experiences</strong>
+        <br />
+        Charles Javerliat, Sophie Villenave, Pierre Raimbaud, Guillaume Lavoué
+        <br />
+        <em>(Journal Track) IEEE Conference on Virtual Reality and 3D User Interfaces</em>
+        <br />
+        <a href="https://www.youtube.com/watch?v=_6krSw7fNqg"><strong>Video »</strong><a>
+        <a href="https://hal.science/hal-04488824"><strong>Paper »</strong></a>
+        <a href="https://github.com/liris-xr/PLUME/wiki/"><strong>Explore the docs »</strong></a>
+        <br />
+        <br />
+        <a href="https://github.com/liris-xr/PLUME/issues">Report Bug</a>
+        ·
+        <a href="https://github.com/liris-xr/PLUME/issues">Request Feature</a>
+    </p>
 </div>
 
 <details>
     <summary>Table of Contents</summary>
     <ol>
-        <li><a href="#about">About</a></li>
+        <li><a href="#about-plume-protos">About PLUME Protos</a></li>
         <li>
             <a href="#getting-started">Getting Started</a>
             <ul>
@@ -18,12 +42,12 @@
         <li><a href="#contributing">Contributing</a></li>
         <li><a href="#license">License</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#citation">Citation</a></li>
     </ol>
 </details>
 
-## About
-
-TODO
+## About PLUME Protos
+This repository stores the definition for samples used by the <a href="https://github.com/liris-xr/PLUME-Recorder">PLUME Recorder</a>. These samples are based on <a href="https://github.com/protocolbuffers/protobuf">protobuf</a> to ease serialization on any platform.
 
 ## Getting Started
 
@@ -77,13 +101,24 @@ Don't forget to give the project a star! Thanks again!
 
 ## License
 
-Distributed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Licence Creative Commons
-Attribution - Non Commercial 4.0 International</a>. See `LICENSE.md` for more information.
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a>
+Distributed under the <a rel="license" href="https://github.com/liris-xr/PLUME/blob/master/LICENSE">GPLv3 License</a>.
 
 ## Contact
 
 Charles JAVERLIAT - charles.javerliat@gmail.com
 
-Sophie VILLENAVE - sophie.villenave@enise.fr
+Sophie VILLENAVE - sophie.villenave@ec-lyon.fr
+
+## Citation
+```
+@article{javerliat_plume_2024,
+	title = {{PLUME}: {Record}, {Replay}, {Analyze} and {Share} {User} {Behavior} in {6DoF} {XR} {Experiences}},
+	url = {https://ieeexplore.ieee.org/document/10458415},
+	doi = {10.1109/TVCG.2024.3372107},
+	journal = {IEEE Transactions on Visualization and Computer Graphics},
+	author = {Javerliat, Charles and Villenave, Sophie and Raimbaud, Pierre and Lavoué, Guillaume},
+	year = {2024},
+	note = {Conference Name: IEEE Transactions on Visualization and Computer Graphics},
+	pages = {1--11}
+}
+```
