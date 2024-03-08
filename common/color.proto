@@ -9,3 +9,33 @@ message Color {
     float b = 3;
     float a = 4;
 }
+
+message ColorGradient {
+
+    ColorSpace color_space = 1;
+    GradientMode mode = 2;
+    repeated ColorKey color_keys = 3;
+    repeated AlphaKey alpha_keys = 4;
+
+    message ColorKey {
+        Color color = 1;
+        float time = 2;
+    }
+
+    message AlphaKey {
+        float alpha = 1;
+        float time = 2;
+    }
+
+    enum GradientMode {
+        GRADIENT_MODE_BLEND = 0;
+        GRADIENT_MODE_FIXED = 1;
+        GRADIENT_MODE_PERCEPTUAL_BLEND = 2;
+    }
+}
+
+enum ColorSpace {
+    COLOR_SPACE_UNINITIALIZED = 0;
+    COLOR_SPACE_GAMMA = 1;
+    COLOR_SPACE_LINEAR = 2;
+}

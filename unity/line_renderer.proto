@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity";
+
+import "unity/identifiers.proto";
+import "common/color.proto";
+import "common/vector2.proto";
+import "common/vector3.proto";
+import "common/animation_curve.proto";
+
+message LineRendererCreate {
+    ComponentIdentifier id = 1;
+}
+
+message LineRendererDestroy {
+    ComponentIdentifier id = 1;
+}
+
+message LineRendererUpdate {
+    ComponentIdentifier id = 1;
+    optional bool loop = 2;
+    optional common.AnimationCurve width_curve = 3;
+    optional float width_multiplier = 4;
+    optional Positions positions = 5;
+    optional common.ColorGradient color = 6;
+    optional int32 corner_vertices = 7;
+    optional int32 end_cap_vertices = 8;
+    optional Alignment alignment = 9;
+    optional TextureMode texture_mode = 10;
+    optional common.Vector2 texture_scale = 11;
+    optional float shadow_bias = 12;
+    optional bool generate_lighting_data = 13;
+    optional bool use_world_space = 14;
+    optional MaskInteraction mask_interaction = 15;
+
+    message Positions {
+        repeated common.Vector3 positions = 1;
+    }
+}
+
+enum Alignment {
+    ALIGNMENT_VIEW = 0;
+    ALIGNMENT_TRANSFORM_Z = 1;
+}
+
+enum TextureMode {
+    TEXTURE_MODE_STRETCH = 0;
+    TEXTURE_MODE_TILE = 1;
+    TEXTURE_MODE_DISTRIBUTE_PER_SEGMENT = 2;
+    TEXTURE_MODE_REPEAT_PER_SEGMENT = 3;
+    TEXTURE_MODE_STATIC = 4;
+}
+
+enum MaskInteraction {
+    MASK_INTERACTION_NONE = 0;
+    MASK_INTERACTION_VISIBLE_INSIDE = 1;
+    MASK_INTERACTION_VISIBLE_OUTSIDE = 2;
+}

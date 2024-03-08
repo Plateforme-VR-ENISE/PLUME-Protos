@@ -4,7 +4,7 @@ package plume.sample.unity.urp;
 option csharp_namespace = "PLUME.Sample.Unity.URP";
 
 import "unity/identifiers.proto";
-import "unity/rendering.proto";
+import "unity/urp/rendering.proto";
 
 message AdditionalCameraDataCreate {
     ComponentIdentifier id = 1;
