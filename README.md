@@ -53,7 +53,7 @@ This repository stores the definition for samples used by the <a href="https://g
 
 Start by cloning the repository using the following command:
 ```console
-git clone https://github.com/Plateforme-VR-ENISE/PLUME-Protos.git
+git clone https://github.com/liris-xr/PLUME-Protos.git
 ```
 
 ### Prerequisites
