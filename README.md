@@ -2,9 +2,9 @@
 <div align="center">
     <a href="https://github.com/liris-xr/PLUME">
         <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="/docs/imgs/plume_banner_dark.png">
-            <source media="(prefers-color-scheme: light)" srcset="/docs/imgs/plume_banner_light.png">
-            <img alt="PLUME banner." src="/docs/imgs/plume_banner_light.png">
+            <source media="(prefers-color-scheme: dark)" srcset="https://github.com/liris-xr/PLUME-Protos/blob/fb65cf9da7104e3dfbe84a3688329ca2d5fbac52/Documentation~/Images/plume_banner_dark.png?raw=true">
+            <source media="(prefers-color-scheme: light)" srcset="https://github.com/liris-xr/PLUME-Protos/blob/fb65cf9da7104e3dfbe84a3688329ca2d5fbac52/Documentation~/Images/plume_banner_light.png?raw=true">
+            <img alt="PLUME banner." src="https://github.com/liris-xr/PLUME-Protos/blob/fb65cf9da7104e3dfbe84a3688329ca2d5fbac52/Documentation~/Images/plume_banner_light.png?raw=true">
         </picture>
     </a>
     <br />
