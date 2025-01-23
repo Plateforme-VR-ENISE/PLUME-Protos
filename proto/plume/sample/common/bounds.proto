@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package plume.sample.common;
+option csharp_namespace = "PLUME.Sample.Common";
+
+import "plume/sample/common/vector3.proto";
+
+message Bounds {
+    common.Vector3 center = 1;
+    common.Vector3 extents = 2;
+}

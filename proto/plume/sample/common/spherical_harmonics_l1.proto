@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package plume.sample.common;
+option csharp_namespace = "PLUME.Sample.Common";
+
+import "plume/sample/common/vector4.proto";
+
+message SphericalHarmonicsL1 {
+    Vector4 sh_ar = 1;
+    Vector4 sh_ag = 2;
+    Vector4 sh_ab = 3;
+}

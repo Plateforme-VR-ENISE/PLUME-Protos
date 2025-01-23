@@ -5,12 +5,10 @@ modules:
     name: buf.build/plume-toolbox/plume-protos-v1
 lint:
   use:
-    - BASIC
-    - ENUM_VALUE_PREFIX
+    - STANDARD
+  except:
     - ENUM_ZERO_VALUE_SUFFIX
-    - FILE_LOWER_SNAKE_CASE
-    - PACKAGE_NO_IMPORT_CYCLE
-    - PROTOVALIDATE
+    - PACKAGE_VERSION_SUFFIX
 breaking:
   use:
     - FILE

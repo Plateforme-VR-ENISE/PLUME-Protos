@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package plume.sample.unity.ui;
+option csharp_namespace = "PLUME.Sample.Unity.UI";
+
+import "plume/sample/common/vector2.proto";
+import "plume/sample/unity/identifiers.proto";
+
+message RectTransformCreate {
+    ComponentIdentifier id = 1;
+}
+
+message RectTransformDestroy {
+    ComponentIdentifier id = 1;
+}
+
+message RectTransformUpdate {
+    ComponentIdentifier id = 1;
+    optional common.Vector2 anchor_min = 2;
+    optional common.Vector2 anchor_max = 3;
+    optional common.Vector2 anchored_position = 4;
+    optional common.Vector2 size_delta = 5;
+    optional common.Vector2 pivot = 6;
+}

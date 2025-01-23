@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package plume.sample.unity.settings;
+option csharp_namespace = "PLUME.Sample.Unity.Settings";
+
+import "plume/sample/unity/identifiers.proto";
+
+// Corresponds to the properties of a quality level defined in Project Settings > Graphics > URP Global Settings
+message URPGlobalSettingsUpdate {
+    string name = 1;
+    optional AssetIdentifier settings_asset_id = 2;
+}

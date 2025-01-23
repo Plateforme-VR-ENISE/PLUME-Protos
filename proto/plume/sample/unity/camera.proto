@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity";
+
+import "plume/sample/unity/identifiers.proto";
+import "plume/sample/unity/rendering.proto";
+import "plume/sample/common/vector2.proto";
+import "plume/sample/common/vector3.proto";
+import "plume/sample/common/matrix4x4.proto";
+import "plume/sample/common/color.proto";
+import "plume/sample/common/rect.proto";
+
+message CameraCreate {
+    ComponentIdentifier id = 1;
+}
+
+message CameraDestroy {
+    ComponentIdentifier id = 1;
+}
+
+message CameraUpdate {
+    ComponentIdentifier id = 1;
+    optional float near_clip_plane = 2;
+    optional float far_clip_plane = 3;
+    optional float field_of_view = 4;
+    optional RenderingPath rendering_path = 5;
+    optional bool allow_hdr = 6;
+    optional bool allow_msaa = 7;
+    optional bool allow_dynamic_resolution = 8;
+    optional bool force_into_render_texture = 9;
+    optional float orthographic_size = 10;
+    optional bool orthographic = 11;
+    optional OpaqueSortMode opaque_sort_mode = 12;
+    optional TransparencySortMode transparency_sort_mode = 13;
+    optional common.Vector3 transparency_sort_axis = 14;
+    optional float depth = 15;
+    optional float aspect = 16;
+    optional int32 culling_mask = 17;
+    optional int32 event_mask = 18;
+    optional bool layer_cull_spherical = 19;
+    optional uint32 camera_type = 20;
+    optional CameraLayerCullDistances layer_cull_distances = 21;
+    optional bool use_occlusion_culling = 22;
+    optional common.Matrix4x4 culling_matrix = 23;
+    optional common.Color background_color = 24;
+    optional uint32 clear_flags = 25;
+    optional uint32 depth_texture_mode = 26;
+    optional bool clear_stencil_after_lighting_pass = 27;
+    optional bool use_physical_properties = 28;
+    optional common.Vector2 sensor_size = 29;
+    optional common.Vector2 lens_shift = 30;
+    optional float focal_length = 31;
+    optional CameraGateFitMode gate_fit = 32;
+    optional common.Rect rect = 33;
+    optional common.Rect pixel_rect = 34;
+    optional AssetIdentifier target_texture_id = 35;
+    optional int32 target_display = 36;
+    optional common.Matrix4x4 world_to_camera_matrix = 37;
+    optional common.Matrix4x4 projection_matrix = 38;
+    optional common.Matrix4x4 non_jittered_projection_matrix = 39;
+    optional bool use_jittered_projection_matrix_for_transparent_rendering = 40;
+    optional float stereo_separation = 41;
+    optional float stereo_convergence = 42;
+    optional CameraStereoTargetEyeMask stereo_target_eye = 43;
+}
+
+message CameraLayerCullDistances {
+    repeated float distances = 1;
+}
+
+enum CameraGateFitMode {
+    CAMERA_GATE_FIT_MODE_NONE = 0;
+    CAMERA_GATE_FIT_MODE_VERTICAL = 1;
+    CAMERA_GATE_FIT_MODE_HORIZONTAL = 2;
+    CAMERA_GATE_FIT_MODE_FILL = 3;
+    CAMERA_GATE_FIT_MODE_OVERSCAN = 4;
+}
+
+enum CameraStereoTargetEyeMask {
+    CAMERA_STEREO_TARGET_EYE_MASK_NONE = 0;
+    CAMERA_STEREO_TARGET_EYE_MASK_LEFT = 1;
+    CAMERA_STEREO_TARGET_EYE_MASK_RIGHT = 2;
+    CAMERA_STEREO_TARGET_EYE_MASK_BOTH = 3;
+}

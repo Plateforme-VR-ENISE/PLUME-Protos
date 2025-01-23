@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package plume.sample.unity;
+option csharp_namespace = "PLUME.Sample.Unity";
+
+import "plume/sample/unity/identifiers.proto";
+import "plume/sample/common/bounds.proto";
+import "plume/sample/common/color.proto";
+
+message ReflectionProbeCreate {
+    ComponentIdentifier id = 1;
+}
+
+message ReflectionProbeDestroy {
+    ComponentIdentifier id = 1;
+}
+
+message ReflectionProbeUpdate {
+    ComponentIdentifier id = 1;
+    optional bool enabled = 2;
+    optional ReflectionProbeMode mode = 3;
+    optional ReflectionProbeRefreshMode refresh_mode = 4;
+    optional ReflectionProbeTimeSlicingMode time_slicing_mode = 5;
+    optional ReflectionProbeClearFlags clear_flags = 6;
+    optional int32 importance = 7;
+    optional float intensity = 8;
+    optional float near_clip_plane = 9;
+    optional float far_clip_plane = 10;
+    optional bool render_dynamic_objects = 11;
+    optional bool box_projection = 12;
+    optional float blend_distance = 13;
+    optional common.Bounds bounds = 14;
+    optional int32 resolution = 15;
+    optional bool hdr = 16;
+    optional float shadow_distance = 17;
+    optional common.Color background_color = 18;
+    optional int32 culling_mask = 19;
+    optional AssetIdentifier custom_baked_texture_id = 20;
+    optional AssetIdentifier baked_texture_id = 21;
+}
+
+enum ReflectionProbeMode {
+    REFLECTION_PROBE_MODE_BAKED = 0;
+    REFLECTION_PROBE_MODE_CUSTOM = 1;
+    REFLECTION_PROBE_MODE_REALTIME = 2;
+}
+
+enum ReflectionProbeClearFlags {
+    REFLECTION_PROBE_CLEAR_FLAGS_SKYBOX = 0;
+    REFLECTION_PROBE_CLEAR_FLAGS_SOLID_COLOR = 1;
+}
+
+enum ReflectionProbeRefreshMode {
+    REFLECTION_PROBE_REFRESH_MODE_ON_AWAKE = 0;
+    REFLECTION_PROBE_REFRESH_MODE_EVERY_FRAME = 1;
+    REFLECTION_PROBE_REFRESH_MODE_VIA_SCRIPTING = 2;
+}
+
+enum ReflectionProbeTimeSlicingMode {
+    REFLECTION_PROBE_TIME_SLICING_MODE_ALL_FACES_AT_ONCE = 0;
+    REFLECTION_PROBE_TIME_SLICING_MODE_INDIVIDUAL_FACES = 1;
+    REFLECTION_PROBE_TIME_SLICING_MODE_NO_TIME_SLICING = 2;
+}

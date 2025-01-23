@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package plume.sample.unity.ui;
+option csharp_namespace = "PLUME.Sample.Unity.UI";
+
+import "plume/sample/unity/identifiers.proto";
+import "plume/sample/common/vector4.proto";
+import "plume/sample/common/color.proto";
+
+message GraphicUpdate {
+    ComponentIdentifier id = 1;
+    optional common.Color color = 2;
+    optional bool raycast_target = 3;
+    optional common.Vector4 raycast_padding = 4;
+    optional AssetIdentifier material_id = 5;
+}
