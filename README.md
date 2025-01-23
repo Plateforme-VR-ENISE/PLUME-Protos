@@ -2,9 +2,9 @@
 <div align="center">
     <a href="https://github.com/liris-xr/PLUME">
         <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="/Documentation~/Images/plume_banner_dark.png">
-            <source media="(prefers-color-scheme: light)" srcset="/Documentation~/Images/plume_banner_light.png">
-            <img alt="PLUME banner." src="/Documentation~/Images/plume_banner_light.png">
+            <source media="(prefers-color-scheme: dark)" srcset="/docs/imgs/plume_banner_dark.png">
+            <source media="(prefers-color-scheme: light)" srcset="/docs/imgs/plume_banner_light.png">
+            <img alt="PLUME banner." src="/docs/imgs/plume_banner_light.png">
         </picture>
     </a>
     <br />
@@ -56,29 +56,15 @@ Start by cloning the repository using the following command:
 git clone https://github.com/liris-xr/PLUME-Protos.git
 ```
 
-### Prerequisites
-
-Install `protoc` and put it in your PATH. You can find the procedure to install protoc [here](https://grpc.io/docs/protoc-installation/).
-<br/>
-Install `python` and put it in your PATH.
-
 ### How to build
 
-#### Python
+Install the Buf CLI by following the steps [here](https://buf.build/docs/installation/).
 
-Simply run:
 ```console
-python build_all_python.py
+buf generate
 ```
-A folder `generated/python` will be created, containing all the `*_pb2.py` files.
 
-#### C#
-
-Simply run:
-```console
-python build_all_csharp.py
-```
-A folder `generated/csharp` will be created, containing all the `*.g.cs` files.
+A folder `generated/` will be created, containing all the generated classes for Python and C#.
 
 ## Usage
 

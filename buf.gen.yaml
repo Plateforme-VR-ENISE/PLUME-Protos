@@ -1,0 +1,14 @@
+version: v2
+clean: true
+plugins:
+  - remote: buf.build/protocolbuffers/csharp:v29.3
+    out: generated/csharp
+    opt:
+      - base_namespace=
+      - file_extension=.g.cs
+  - remote: buf.build/protocolbuffers/python:v29.3
+    out: generated/python
+  - remote: buf.build/protocolbuffers/pyi:v29.3
+    out: generated/python
+inputs:
+  - directory: proto

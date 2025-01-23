@@ -1,0 +1,16 @@
+# For details on buf.yaml configuration, visit https://buf.build/docs/configuration/v2/buf-yaml
+version: v2
+modules:
+  - path: proto
+    name: buf.build/plume-toolbox/plume-protos-v1
+lint:
+  use:
+    - BASIC
+    - ENUM_VALUE_PREFIX
+    - ENUM_ZERO_VALUE_SUFFIX
+    - FILE_LOWER_SNAKE_CASE
+    - PACKAGE_NO_IMPORT_CYCLE
+    - PROTOVALIDATE
+breaking:
+  use:
+    - FILE
