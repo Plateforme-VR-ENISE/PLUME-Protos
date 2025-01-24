@@ -6,34 +6,34 @@ option csharp_namespace = "PLUME.Sample.Unity.XRITK";
 import "plume/sample/unity/identifiers.proto";
 
 message XRBaseInteractorCreate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message XRBaseInteractorDestroy {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message XRBaseInteractorUpdate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
     optional bool enabled = 2;
 }
 
 message XRBaseInteractorHoverEnter {
-    ComponentIdentifier id = 1;
-	ComponentIdentifier interactable_current = 2;
+    ComponentIdentifier component = 1;
+	ComponentIdentifier interactable = 2;
 }
 
 message XRBaseInteractorHoverExit {
-    ComponentIdentifier id = 1;
-	ComponentIdentifier interactable_current = 2;
+    ComponentIdentifier component = 1;
+	ComponentIdentifier interactable = 2;
 }
 
 message XRBaseInteractorSelectEnter {
-    ComponentIdentifier id = 1;
-	ComponentIdentifier interactable_current = 2;
+    ComponentIdentifier component = 1;
+	ComponentIdentifier interactable = 2;
 }
 
 message XRBaseInteractorSelectExit {
-    ComponentIdentifier id = 1;
-	ComponentIdentifier interactable_current = 2;
+    ComponentIdentifier component = 1;
+	ComponentIdentifier interactable = 2;
 }

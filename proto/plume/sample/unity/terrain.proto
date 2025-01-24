@@ -9,15 +9,15 @@ import "plume/sample/common/vector3.proto";
 import "plume/sample/common/vector4.proto";
 
 message TerrainCreate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message TerrainDestroy {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message TerrainUpdate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
     optional bool enabled = 2;
     optional AssetIdentifier terrain_data_id = 3;
     optional float tree_distance = 4;

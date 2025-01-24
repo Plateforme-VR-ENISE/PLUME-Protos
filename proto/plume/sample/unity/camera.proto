@@ -12,15 +12,15 @@ import "plume/sample/common/color.proto";
 import "plume/sample/common/rect.proto";
 
 message CameraCreate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message CameraDestroy {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message CameraUpdate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
     optional float near_clip_plane = 2;
     optional float far_clip_plane = 3;
     optional float field_of_view = 4;

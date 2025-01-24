@@ -8,7 +8,7 @@ import "plume/sample/common/vector4.proto";
 import "plume/sample/common/color.proto";
 
 message GraphicUpdate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
     optional common.Color color = 2;
     optional bool raycast_target = 3;
     optional common.Vector4 raycast_padding = 4;

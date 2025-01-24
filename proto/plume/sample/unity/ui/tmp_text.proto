@@ -8,15 +8,15 @@ import "plume/sample/common/vector4.proto";
 import "plume/sample/common/color.proto";
 
 message TMPTextCreate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message TMPTextDestroy {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message TMPTextUpdate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
     optional string text = 2;
     optional AssetIdentifier font_id = 3;
     optional int32 font_style = 4;

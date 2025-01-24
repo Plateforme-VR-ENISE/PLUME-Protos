@@ -7,15 +7,15 @@ import "plume/sample/unity/identifiers.proto";
 import "plume/sample/common/vector2.proto";
 
 message CanvasScalerCreate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message CanvasScalerDestroy {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message CanvasScalerUpdate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
     optional ScaleMode ui_scale_mode = 2;
     optional float reference_pixels_per_unit = 3;
     optional float scale_factor = 4;

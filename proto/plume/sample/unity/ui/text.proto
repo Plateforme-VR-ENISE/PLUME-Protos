@@ -7,15 +7,15 @@ import "plume/sample/unity/identifiers.proto";
 import "plume/sample/common/color.proto";
 
 message TextCreate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message TextDestroy {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message TextUpdate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
     optional string text = 2;
     optional AssetIdentifier font_id = 3;
     optional FontStyle font_style = 4;

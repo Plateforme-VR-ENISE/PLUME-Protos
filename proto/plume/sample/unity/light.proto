@@ -9,15 +9,15 @@ import "plume/sample/common/vector4.proto";
 import "plume/sample/common/color.proto";
 
 message LightCreate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message LightDestroy {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message LightUpdate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
     optional bool enabled = 2;
     optional LightType type = 3;
     optional LightShape shape = 4;

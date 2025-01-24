@@ -6,15 +6,15 @@ option csharp_namespace = "PLUME.Sample.Unity";
 import "plume/sample/unity/identifiers.proto";
 
 message SkinnedMeshRendererCreate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message SkinnedMeshRendererDestroy {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message SkinnedMeshRendererUpdate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
     
     optional AssetIdentifier mesh_id = 2;
     optional ComponentIdentifier root_bone_id = 3;

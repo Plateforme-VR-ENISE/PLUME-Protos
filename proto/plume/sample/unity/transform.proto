@@ -8,15 +8,15 @@ import "plume/sample/common/quaternion.proto";
 import "plume/sample/unity/identifiers.proto";
 
 message TransformCreate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message TransformDestroy {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message TransformUpdate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
     optional ComponentIdentifier parent_transform_id = 2;
     optional int32 sibling_idx = 3;
 

@@ -8,7 +8,7 @@ import "plume/sample/common/bounds.proto";
 import "plume/sample/common/vector4.proto";
 
 message RendererUpdate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
     
     optional bool enabled = 2;
     optional Materials materials = 3;

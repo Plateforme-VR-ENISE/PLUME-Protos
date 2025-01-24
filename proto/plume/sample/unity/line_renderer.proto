@@ -10,15 +10,15 @@ import "plume/sample/common/vector3.proto";
 import "plume/sample/common/animation_curve.proto";
 
 message LineRendererCreate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message LineRendererDestroy {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message LineRendererUpdate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
     optional bool loop = 2;
     optional common.AnimationCurve width_curve = 3;
     optional float width_multiplier = 4;

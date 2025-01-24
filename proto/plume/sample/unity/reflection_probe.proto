@@ -8,15 +8,15 @@ import "plume/sample/common/bounds.proto";
 import "plume/sample/common/color.proto";
 
 message ReflectionProbeCreate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message ReflectionProbeDestroy {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
 }
 
 message ReflectionProbeUpdate {
-    ComponentIdentifier id = 1;
+    ComponentIdentifier component = 1;
     optional bool enabled = 2;
     optional ReflectionProbeMode mode = 3;
     optional ReflectionProbeRefreshMode refresh_mode = 4;
