@@ -15,5 +15,5 @@ message MeshFilterDestroy {
 
 message MeshFilterUpdate {
     ComponentIdentifier component = 1;
-    optional AssetIdentifier mesh_id = 2;
+    optional AssetIdentifier mesh = 2;
 }

@@ -15,7 +15,7 @@ message ImageDestroy {
 
 message ImageUpdate {
     ComponentIdentifier component = 1;
-    optional AssetIdentifier sprite_id = 2;
+    optional AssetIdentifier sprite = 2;
     optional ImageType type = 3;
 }
 

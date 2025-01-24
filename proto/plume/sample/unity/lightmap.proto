@@ -11,9 +11,9 @@ message LightmapsUpdate {
 }
 
 message LightmapData {
-    optional AssetIdentifier lightmap_color_texture_id = 1;
-    optional AssetIdentifier lightmap_dir_texture_id = 2;
-    optional AssetIdentifier lightmap_shadow_mask_texture_id = 3;
+    optional AssetIdentifier lightmap_color_texture = 1;
+    optional AssetIdentifier lightmap_dir_texture = 2;
+    optional AssetIdentifier lightmap_shadow_mask_texture = 3;
 }
 
 enum LightmapsMode {

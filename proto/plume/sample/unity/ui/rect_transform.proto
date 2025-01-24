@@ -3,6 +3,8 @@ syntax = "proto3";
 package plume.sample.unity.ui;
 option csharp_namespace = "PLUME.Sample.Unity.UI";
 
+import "plume/sample/common/vector3.proto";
+import "plume/sample/common/quaternion.proto";
 import "plume/sample/common/vector2.proto";
 import "plume/sample/unity/identifiers.proto";
 
@@ -16,9 +18,16 @@ message RectTransformDestroy {
 
 message RectTransformUpdate {
     ComponentIdentifier component = 1;
-    optional common.Vector2 anchor_min = 2;
-    optional common.Vector2 anchor_max = 3;
-    optional common.Vector2 anchored_position = 4;
-    optional common.Vector2 size_delta = 5;
-    optional common.Vector2 pivot = 6;
+    optional ComponentIdentifier parent_transform = 2;
+    optional int32 sibling_idx = 3;
+
+    optional common.Vector3 local_position = 4;
+    optional common.Quaternion local_rotation = 5;
+    optional common.Vector3 local_scale = 6;
+
+    optional common.Vector2 anchor_min = 7;
+    optional common.Vector2 anchor_max = 8;
+    optional common.Vector2 anchored_position = 9;
+    optional common.Vector2 size_delta = 10;
+    optional common.Vector2 pivot = 11;
 }

@@ -20,7 +20,7 @@ message VolumeUpdate {
     optional float blend_distance = 4;
     optional float weight = 5;
     optional float priority = 6;
-    optional AssetIdentifier shared_profile_id = 7;
+    optional AssetIdentifier shared_profile = 7;
 
     message Colliders {
         repeated ComponentIdentifier ids = 1;

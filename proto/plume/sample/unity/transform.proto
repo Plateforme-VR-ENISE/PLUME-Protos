@@ -17,7 +17,7 @@ message TransformDestroy {
 
 message TransformUpdate {
     ComponentIdentifier component = 1;
-    optional ComponentIdentifier parent_transform_id = 2;
+    optional ComponentIdentifier parent_transform = 2;
     optional int32 sibling_idx = 3;
 
     optional common.Vector3 local_position = 4;

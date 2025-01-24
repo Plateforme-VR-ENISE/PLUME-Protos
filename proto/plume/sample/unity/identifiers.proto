@@ -4,28 +4,22 @@ package plume.sample.unity;
 option csharp_namespace = "PLUME.Sample.Unity";
 
 message GameObjectIdentifier {
-    string uuid = 1;
-    string transform_uuid = 2;
-    SceneIdentifier scene = 3;
+    string guid = 1;
+    string transform_guid = 2;
 }
 
 message ComponentIdentifier {
-    string uuid = 1;
-    GameObjectIdentifier parent = 2;
+    string guid = 1;
+    GameObjectIdentifier gameobject = 2;
 }
 
 message AssetIdentifier {
-    string uuid = 1;
+    string guid = 1;
     string path = 2;
 }
 
 message SceneIdentifier {
-    string uuid = 1;
+    string guid = 1;
     string name = 2;
-    optional string path = 3;
-}
-
-enum LoadSceneMode {
-    LOAD_SCENE_MODE_SINGLE = 0;
-    LOAD_SCENE_MODE_ADDITIVE = 1;
+    string path = 3;
 }

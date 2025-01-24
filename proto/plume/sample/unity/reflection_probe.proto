@@ -35,8 +35,8 @@ message ReflectionProbeUpdate {
     optional float shadow_distance = 17;
     optional common.Color background_color = 18;
     optional int32 culling_mask = 19;
-    optional AssetIdentifier custom_baked_texture_id = 20;
-    optional AssetIdentifier baked_texture_id = 21;
+    optional AssetIdentifier custom_baked_texture = 20;
+    optional AssetIdentifier baked_texture = 21;
 }
 
 enum ReflectionProbeMode {

@@ -7,6 +7,7 @@ import "plume/sample/unity/identifiers.proto";
 
 message GameObjectCreate {
     GameObjectIdentifier id = 1;
+    SceneIdentifier scene = 2;
 }
 
 message GameObjectDestroy {
@@ -19,5 +20,5 @@ message GameObjectUpdate {
     optional bool active = 3;
     optional string tag = 4;
     optional int32 layer = 5;
-    optional int32 scene_id = 6;
+    optional SceneIdentifier scene = 6;
 }

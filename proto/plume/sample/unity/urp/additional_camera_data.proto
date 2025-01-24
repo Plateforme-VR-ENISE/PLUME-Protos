@@ -24,7 +24,7 @@ message AdditionalCameraDataUpdate {
     optional bool requires_depth_texture = 7;
     optional bool requires_color_texture = 8;
     optional int32 volume_layer_mask = 9;
-    optional ComponentIdentifier volume_trigger_id = 10;
+    optional ComponentIdentifier volume_trigger = 10;
     optional bool render_post_processing = 11;
     optional AntialiasingMode antialiasing = 12;
     optional AntialiasingQuality antialiasing_quality = 13;

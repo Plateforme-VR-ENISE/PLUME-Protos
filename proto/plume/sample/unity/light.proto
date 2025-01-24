@@ -54,10 +54,10 @@ message LightUpdate {
     optional common.Vector4 bounding_sphere_override = 27;
     optional bool use_bounding_sphere_override = 28;
 
-    optional AssetIdentifier cookie_id = 29;
+    optional AssetIdentifier cookie = 29;
     optional float cookie_size = 30;
 
-    optional AssetIdentifier flare_id = 31;
+    optional AssetIdentifier flare = 31;
 }
 
 message LayerShadowCullDistances {

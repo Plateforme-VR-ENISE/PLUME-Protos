@@ -6,13 +6,19 @@ option csharp_namespace = "PLUME.Sample.Unity";
 import "plume/sample/unity/identifiers.proto";
 
 message LoadScene {
-    SceneIdentifier id = 1;
+    SceneIdentifier scene = 1;
+    LoadSceneMode mode = 2;
 }
 
 message UnloadScene {
-    SceneIdentifier id = 1;
+    SceneIdentifier scene = 1;
 }
 
 message ChangeActiveScene {
-    SceneIdentifier id = 1;
+    SceneIdentifier scene = 1;
+}
+
+enum LoadSceneMode {
+    LOAD_SCENE_MODE_SINGLE = 0;
+    LOAD_SCENE_MODE_ADDITIVE = 1;
 }

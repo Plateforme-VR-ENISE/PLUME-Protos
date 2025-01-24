@@ -19,7 +19,7 @@ message TerrainDestroy {
 message TerrainUpdate {
     ComponentIdentifier component = 1;
     optional bool enabled = 2;
-    optional AssetIdentifier terrain_data_id = 3;
+    optional AssetIdentifier terrain_data = 3;
     optional float tree_distance = 4;
     optional float tree_billboard_distance = 5;
     optional float tree_cross_fade_length = 6;
@@ -36,12 +36,12 @@ message TerrainUpdate {
     optional bool keep_unused_rendering_resources = 17;
     optional ShadowCastingMode shadow_casting_mode = 18;
     optional ReflectionProbeUsage reflection_probe_usage = 19;
-    optional AssetIdentifier material_template_id = 20;
+    optional AssetIdentifier material_template = 20;
     optional bool draw_heightmap = 21;
     optional bool allow_auto_connect = 22;
     optional int32 grouping_id = 23;
     optional bool draw_instanced = 24;
-    optional AssetIdentifier normalmap_texture_id = 25;
+    optional AssetIdentifier normalmap_texture = 25;
     optional bool draw_trees_and_foliage = 26;
     optional common.Vector3 patch_bounds_multiplier = 27;
     optional float tree_lod_bias_multiplier = 28;

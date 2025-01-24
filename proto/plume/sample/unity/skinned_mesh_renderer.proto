@@ -16,8 +16,8 @@ message SkinnedMeshRendererDestroy {
 message SkinnedMeshRendererUpdate {
     ComponentIdentifier component = 1;
     
-    optional AssetIdentifier mesh_id = 2;
-    optional ComponentIdentifier root_bone_id = 3;
+    optional AssetIdentifier mesh = 2;
+    optional ComponentIdentifier root_bone = 3;
     optional Bones bones = 4;
     optional BlendShapeWeights blend_shape_weights = 5;
     

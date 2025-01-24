@@ -12,5 +12,5 @@ message GraphicUpdate {
     optional common.Color color = 2;
     optional bool raycast_target = 3;
     optional common.Vector4 raycast_padding = 4;
-    optional AssetIdentifier material_id = 5;
+    optional AssetIdentifier material = 5;
 }

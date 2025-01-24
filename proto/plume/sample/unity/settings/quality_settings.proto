@@ -8,6 +8,6 @@ import "plume/sample/unity/identifiers.proto";
 // Corresponds to the properties of a quality level defined in Project Settings > Quality
 message QualitySettingsUpdate {
     string name = 1;
-    optional AssetIdentifier render_pipeline_asset_id = 2;
+    optional AssetIdentifier render_pipeline_asset = 2;
     // TODO: add other properties (ie. antialiasing, particles settings, terrain settings, etc.)
 }

@@ -16,7 +16,7 @@ message TerrainColliderDestroy {
 message TerrainColliderUpdate {
     ComponentIdentifier component = 1;
     optional bool enabled = 2;
-    optional AssetIdentifier terrain_data_id = 3;
+    optional AssetIdentifier terrain_data = 3;
     // Physic material of the terrain (friction, bounciness)
-    optional AssetIdentifier material_id = 4;
+    optional AssetIdentifier material = 4;
 }

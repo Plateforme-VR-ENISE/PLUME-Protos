@@ -17,7 +17,7 @@ message TextDestroy {
 message TextUpdate {
     ComponentIdentifier component = 1;
     optional string text = 2;
-    optional AssetIdentifier font_id = 3;
+    optional AssetIdentifier font = 3;
     optional FontStyle font_style = 4;
     optional int32 font_size = 5;
     optional common.Color color = 6;

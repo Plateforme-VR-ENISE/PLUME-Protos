@@ -8,6 +8,6 @@ import "plume/sample/common/color.proto";
 
 // Corresponds to the settings in Project Settings > Graphics
 message GraphicsSettings {
-    AssetIdentifier default_render_pipeline_asset_id = 1;
+    AssetIdentifier default_render_pipeline_asset = 1;
     common.ColorSpace color_space = 2;
 }
