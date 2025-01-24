@@ -6,23 +6,21 @@ option csharp_namespace = "PLUME.Sample.Unity";
 import "plume/sample/common/vector2.proto";
 import "plume/sample/common/vector3.proto";
 import "plume/sample/common/quaternion.proto";
-import "plume/sample/unity/identifiers.proto";
 
 message InputAction {
-    ComponentIdentifier id = 1;
-	string name = 2;
-    repeated string binding_paths = 3;
-    InputActionType type = 4;
+	string name = 1;
+    repeated string binding_paths = 2;
+    InputActionType type = 3;
 
     oneof value {
-        bool boolean = 5;
-        int32 integer = 6;
-        float float = 7;
-        double double = 8;
-        common.Vector2 vector2 = 9;
-        common.Vector3 vector3 = 10;
-        common.Quaternion quaternion = 11;
-        ButtonValue button = 12;
+        bool boolean = 4;
+        int32 integer = 5;
+        float float = 6;
+        double double = 7;
+        common.Vector2 vector2 = 8;
+        common.Vector3 vector3 = 9;
+        common.Quaternion quaternion = 10;
+        ButtonValue button = 11;
     }
 }
 
