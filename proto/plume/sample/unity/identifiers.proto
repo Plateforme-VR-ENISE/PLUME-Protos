@@ -11,7 +11,7 @@ message GameObjectIdentifier {
 
 message ComponentIdentifier {
     string guid = 1;
-    GameObjectIdentifier gameobject = 2;
+    GameObjectIdentifier game_object = 2;
 }
 
 message AssetIdentifier {
