@@ -6,6 +6,7 @@ option csharp_namespace = "PLUME.Sample.Unity";
 message GameObjectIdentifier {
     string guid = 1;
     string transform_guid = 2;
+    SceneIdentifier scene = 3;
 }
 
 message ComponentIdentifier {
@@ -15,11 +16,11 @@ message ComponentIdentifier {
 
 message AssetIdentifier {
     string guid = 1;
-    string path = 2;
+    string asset_bundle_path = 2;
 }
 
 message SceneIdentifier {
     string guid = 1;
     string name = 2;
-    string path = 3;
+    string asset_bundle_path = 3;
 }
