@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package plume.sample.unity.settings;
+option csharp_namespace = "PLUME.Sample.Unity.Settings";
+
+import "plume/sample/unity/identifiers.proto";
+import "plume/sample/common/color.proto";
+import "plume/sample/common/spherical_harmonics_l2.proto";
+
+message RenderSettingsUpdate {
+    optional AssetIdentifier skybox = 1;
+    optional ComponentIdentifier sun = 2;
+
+    optional bool fog = 3;
+    optional FogMode fog_mode = 4;
+    optional common.Color fog_color = 5;
+    optional float fog_density = 6;
+    optional float fog_start_distance = 7;
+    optional float fog_end_distance = 8;
+
+    optional common.Color ambient_color = 9;
+    optional common.Color ambient_equator_color = 10;
+    optional common.Color ambient_ground_color = 11;
+    optional common.Color ambient_sky_color = 12;
+    optional float ambient_intensity = 13;
+    optional AmbientMode ambient_mode = 14;
+    optional common.SphericalHarmonicsL2 ambient_probe = 15;
+
+    optional AssetIdentifier custom_reflection_texture = 16;
+    optional DefaultReflectionMode default_reflection_mode = 17;
+    optional int32 default_reflection_resolution = 18;
+    optional int32 reflection_bounces = 19;
+    optional float reflection_intensity = 20;
+
+    optional float halo_strength = 21;
+    optional float flare_strength = 22;
+    optional float flare_fade_speed = 23;
+
+    optional common.Color subtractive_shadow_color = 24;
+}
+
+enum FogMode {
+    FOG_MODE_UNSPECIFIED = 0;
+    FOG_MODE_LINEAR = 1;
+    FOG_MODE_EXPONENTIAL = 2;
+    FOG_MODE_EXPONENTIAL_SQUARED = 3;
+}
+
+enum AmbientMode {
+    AMBIENT_MODE_UNSPECIFIED = 0;
+    AMBIENT_MODE_SKYBOX = 1;
+    AMBIENT_MODE_TRILIGHT = 2;
+    AMBIENT_MODE_FLAT = 3;
+    AMBIENT_MODE_CUSTOM = 4;
+}
+
+enum DefaultReflectionMode {
+    DEFAULT_REFLECTION_MODE_UNSPECIFIED = 0;
+    DEFAULT_REFLECTION_MODE_SKYBOX = 1;
+    DEFAULT_REFLECTION_MODE_CUSTOM = 2;
+}
