@@ -7,5 +7,5 @@ import "plume/sample/common/vector3.proto";
 
 message Bounds {
     common.Vector3 center = 1;
-    common.Vector3 extents = 2;
+    common.Vector3 size = 2;
 }
