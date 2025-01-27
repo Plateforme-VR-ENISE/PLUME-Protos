@@ -18,10 +18,11 @@ message RenderSettingsUpdate {
     optional float fog_start_distance = 7;
     optional float fog_end_distance = 8;
 
-    optional common.Color ambient_color = 9;
+    optional common.Color ambient_light_color = 9;
     optional common.Color ambient_equator_color = 10;
     optional common.Color ambient_ground_color = 11;
     optional common.Color ambient_sky_color = 12;
+
     optional float ambient_intensity = 13;
     optional AmbientMode ambient_mode = 14;
     optional common.SphericalHarmonicsL2 ambient_probe = 15;
