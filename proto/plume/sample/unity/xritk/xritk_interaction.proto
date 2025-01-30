@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package plume.sample.unity.xritk;
+option csharp_namespace = "PLUME.Sample.Unity.XRITK";
+
+import "plume/sample/unity/identifiers.proto";
+
+enum XRITKInteractionType {
+    XRITK_INTERACTION_TYPE_UNSPECIFIED = 0;
+    XRITK_INTERACTION_TYPE_HOVER_ENTER = 1;
+    XRITK_INTERACTION_TYPE_HOVER_EXIT = 2;
+    XRITK_INTERACTION_TYPE_SELECT_ENTER = 3;
+    XRITK_INTERACTION_TYPE_SELECT_EXIT = 4;
+    XRITK_INTERACTION_TYPE_ACTIVATE_ENTER = 5;
+    XRITK_INTERACTION_TYPE_ACTIVATE_EXIT = 6;
+}
+
+message XRITKInteraction {
+    ComponentIdentifier interactable = 1;
+	ComponentIdentifier interactor = 2;
+    XRITKInteractionType type = 3;
+}

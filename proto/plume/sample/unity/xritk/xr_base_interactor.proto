@@ -17,23 +17,3 @@ message XRBaseInteractorUpdate {
     ComponentIdentifier component = 1;
     optional bool enabled = 2;
 }
-
-message XRBaseInteractorHoverEnter {
-    ComponentIdentifier component = 1;
-	ComponentIdentifier interactable = 2;
-}
-
-message XRBaseInteractorHoverExit {
-    ComponentIdentifier component = 1;
-	ComponentIdentifier interactable = 2;
-}
-
-message XRBaseInteractorSelectEnter {
-    ComponentIdentifier component = 1;
-	ComponentIdentifier interactable = 2;
-}
-
-message XRBaseInteractorSelectExit {
-    ComponentIdentifier component = 1;
-	ComponentIdentifier interactable = 2;
-}
